@@ -1,0 +1,10 @@
+{
+  "candidate": "c05",
+  "weight_sha256": "2e200d67147784dac965aad6a9477c2f1e7f0f6ef330419f523e0c825a318b59",
+  "best_epoch": 17,
+  "best_checkpoint_updates": 6086,
+  "total_candidate_epochs": 102,
+  "total_updates": 36516,
+  "independent_used_for_selection": false,
+  "threshold": 0.5
+}

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "frozen_dependencies_verified": 1015,
+  "source_cache_hashes_verified": 17672,
+  "epochs_row_mass_verified": 102,
+  "candidate_checkpoints_verified": 16,
+  "initial_strict_WM17_identity": true,
+  "remaining_frozen_parameters_unchanged": true,
+  "optimizer_metadata_verified": true,
+  "latest_equal_budget_elimination_verified": true,
+  "independent_public_verified": 504,
+  "independent_unique_private_verified": 216,
+  "independent_model_calls": 0,
+  "optimizer_instances": 0,
+  "optimizer_updates": 0,
+  "hardware_enabled": false
+}

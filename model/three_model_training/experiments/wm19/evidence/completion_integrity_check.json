@@ -1,0 +1,11 @@
+{
+  "verification_passed": true,
+  "scored_candidates": 504,
+  "weight_sha256": "2e200d67147784dac965aad6a9477c2f1e7f0f6ef330419f523e0c825a318b59",
+  "verification_report_sha256": "9528e78e28a4e5a7c5d08d7f454d95a8f5c25b7ac078d3f471fcf8f7a64fb086",
+  "score_report_sha256": "3c533315efa1674851cb012fd25a97cde4b304b6b49378999c77f819cb5061d4",
+  "quality_gate_sha256": "0669a252443ec09082c9def565be4f38d894e5112d3f9341cbd51e3115ccefb8",
+  "physical_reliability_subgate_passed": false,
+  "optimizer_updates": 0,
+  "hardware_enabled": false
+}

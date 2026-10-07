@@ -1,0 +1,99 @@
+{
+  "candidates": [
+    {
+      "id": "c01",
+      "learning_rate": 2.5e-05,
+      "schedule_seed": 2027500000
+    },
+    {
+      "id": "c02",
+      "learning_rate": 2.5e-05,
+      "schedule_seed": 2027510000
+    },
+    {
+      "id": "c03",
+      "learning_rate": 5e-05,
+      "schedule_seed": 2027500000
+    },
+    {
+      "id": "c04",
+      "learning_rate": 5e-05,
+      "schedule_seed": 2027510000
+    },
+    {
+      "id": "c05",
+      "learning_rate": 0.0001,
+      "schedule_seed": 2027500000
+    },
+    {
+      "id": "c06",
+      "learning_rate": 0.0001,
+      "schedule_seed": 2027510000
+    },
+    {
+      "id": "c07",
+      "learning_rate": 0.0002,
+      "schedule_seed": 2027500000
+    },
+    {
+      "id": "c08",
+      "learning_rate": 0.0002,
+      "schedule_seed": 2027510000
+    }
+  ],
+  "maximum_candidate_epochs": 102,
+  "maximum_updates": 36516,
+  "cumulative_epochs": [
+    6,
+    12,
+    24,
+    30
+  ],
+  "survivors": [
+    8,
+    4,
+    2,
+    1
+  ],
+  "threshold": 0.5,
+  "source_weight_sha256": "48edb967d34f263bfb843a84fcba49eeebe952b41ab95133d18d12d8005e3f1b",
+  "trainable_parameter_prefixes": [
+    "action_encoder.",
+    "events.",
+    "local_action_context.",
+    "local_spatial.",
+    "local_attention.",
+    "local_projection."
+  ],
+  "train_rows": 13407,
+  "validation_rows": [
+    3460,
+    120,
+    141,
+    168,
+    256
+  ],
+  "selection": {
+    "source_balanced_mean": "Mean of five grouped validation source keys; original/motion/entity/visibility retain five critical classes, lateral uses total/new object_finger macro rates. Missing positive categories explicitly reported, not accuracy or acceptance. No independent tuning.",
+    "per_source_key": "20*critical_macro_FN + critical_macro_FP + normalized_motion_MSE + .1*event_Brier + .05*(object_flow_MAE + entity_flow_MAE)",
+    "critical": [
+      "object_nonfinger",
+      "object_object",
+      "object_tray_wall",
+      "robot_tray",
+      "robot_floor"
+    ],
+    "independent_used_for_selection": false,
+    "targeted_lateral_categories": [
+      "object_finger"
+    ]
+  },
+  "elimination": "latest cumulative epoch five-source key; candidate id tie; final surviving candidate validation best",
+  "fresh_independent_excluded_fit_selection": true,
+  "reliability_gate": {
+    "key_contacts": "Existing five critical total/new +newself zeroFN and<=10%FP across five validation and independent scopes; separately targeted object_finger total/new lateral val and paired independent zeroFN and<=10%FP. Missing categories explicit, not passed coverage.",
+    "actual_start_grasp": "Actual suspended twofinger subsets of legacy entity and new visibility validation and new independent extra: retention/loss zero FN/FP.",
+    "failure_blocks_execution": true,
+    "full_task_acceptance_passed": false
+  }
+}

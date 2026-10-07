@@ -1,0 +1,1814 @@
+{
+  "scopes": {
+    "new_physical": {
+      "scope": "new_physical",
+      "samples": 120,
+      "models": {
+        "WM19": {
+          "physical_contacts": {
+            "object_finger": {
+              "known_labels": 120,
+              "positives": 4,
+              "negatives": 116,
+              "false_negatives": 2,
+              "false_positives": 0
+            },
+            "object_nonfinger": {
+              "known_labels": 120,
+              "positives": 12,
+              "negatives": 108,
+              "false_negatives": 2,
+              "false_positives": 3
+            },
+            "object_object": {
+              "known_labels": 120,
+              "positives": 12,
+              "negatives": 108,
+              "false_negatives": 2,
+              "false_positives": 3
+            },
+            "object_tray_wall": {
+              "known_labels": 120,
+              "positives": 12,
+              "negatives": 108,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 120,
+              "positives": 12,
+              "negatives": 108,
+              "false_negatives": 2,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 120,
+              "positives": 120,
+              "negatives": 0,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 120,
+              "positives": 12,
+              "negatives": 108,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 120,
+              "positives": 9,
+              "negatives": 111,
+              "false_negatives": 0,
+              "false_positives": 2
+            },
+            "robot_self": {
+              "known_labels": 120,
+              "positives": 120,
+              "negatives": 0,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "new_contacts": {
+            "object_finger": {
+              "known_labels": 120,
+              "positives": 4,
+              "negatives": 116,
+              "false_negatives": 2,
+              "false_positives": 0
+            },
+            "object_nonfinger": {
+              "known_labels": 120,
+              "positives": 12,
+              "negatives": 108,
+              "false_negatives": 2,
+              "false_positives": 3
+            },
+            "object_object": {
+              "known_labels": 120,
+              "positives": 12,
+              "negatives": 108,
+              "false_negatives": 2,
+              "false_positives": 3
+            },
+            "object_tray_wall": {
+              "known_labels": 120,
+              "positives": 12,
+              "negatives": 108,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 120,
+              "positives": 12,
+              "negatives": 108,
+              "false_negatives": 2,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 120,
+              "positives": 72,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 120,
+              "positives": 12,
+              "negatives": 108,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 120,
+              "positives": 9,
+              "negatives": 111,
+              "false_negatives": 0,
+              "false_positives": 2
+            },
+            "robot_self": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "unlocalized_contacts": {
+            "object_finger": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_nonfinger": {
+              "known_labels": 120,
+              "positives": 6,
+              "negatives": 114,
+              "false_negatives": 2,
+              "false_positives": 3
+            },
+            "object_object": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_wall": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_self": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "retention": {
+            "terminal_grasp": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "grip_loss": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          }
+        },
+        "WM17": {
+          "physical_contacts": {
+            "object_finger": {
+              "known_labels": 120,
+              "positives": 4,
+              "negatives": 116,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "object_nonfinger": {
+              "known_labels": 120,
+              "positives": 12,
+              "negatives": 108,
+              "false_negatives": 2,
+              "false_positives": 3
+            },
+            "object_object": {
+              "known_labels": 120,
+              "positives": 12,
+              "negatives": 108,
+              "false_negatives": 3,
+              "false_positives": 1
+            },
+            "object_tray_wall": {
+              "known_labels": 120,
+              "positives": 12,
+              "negatives": 108,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 120,
+              "positives": 12,
+              "negatives": 108,
+              "false_negatives": 2,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 120,
+              "positives": 120,
+              "negatives": 0,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 120,
+              "positives": 12,
+              "negatives": 108,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 120,
+              "positives": 9,
+              "negatives": 111,
+              "false_negatives": 0,
+              "false_positives": 2
+            },
+            "robot_self": {
+              "known_labels": 120,
+              "positives": 120,
+              "negatives": 0,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "new_contacts": {
+            "object_finger": {
+              "known_labels": 120,
+              "positives": 4,
+              "negatives": 116,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "object_nonfinger": {
+              "known_labels": 120,
+              "positives": 12,
+              "negatives": 108,
+              "false_negatives": 2,
+              "false_positives": 3
+            },
+            "object_object": {
+              "known_labels": 120,
+              "positives": 12,
+              "negatives": 108,
+              "false_negatives": 3,
+              "false_positives": 1
+            },
+            "object_tray_wall": {
+              "known_labels": 120,
+              "positives": 12,
+              "negatives": 108,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 120,
+              "positives": 12,
+              "negatives": 108,
+              "false_negatives": 2,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 120,
+              "positives": 72,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 120,
+              "positives": 12,
+              "negatives": 108,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 120,
+              "positives": 9,
+              "negatives": 111,
+              "false_negatives": 0,
+              "false_positives": 2
+            },
+            "robot_self": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "unlocalized_contacts": {
+            "object_finger": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_nonfinger": {
+              "known_labels": 120,
+              "positives": 6,
+              "negatives": 114,
+              "false_negatives": 2,
+              "false_positives": 3
+            },
+            "object_object": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_wall": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_self": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "retention": {
+            "terminal_grasp": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "grip_loss": {
+              "known_labels": 120,
+              "positives": 0,
+              "negatives": 120,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          }
+        }
+      },
+      "WM19_weight_sha256": "2e200d67147784dac965aad6a9477c2f1e7f0f6ef330419f523e0c825a318b59",
+      "WM17_weight_sha256": "48edb967d34f263bfb843a84fcba49eeebe952b41ab95133d18d12d8005e3f1b",
+      "threshold": 0.5,
+      "observed_flow_mae_pixels": null,
+      "observed_flow_truth_available": false,
+      "visible_flow_scalar_cells": 0.0,
+      "masked_flow_samples": 0,
+      "independent_test": true,
+      "full_task_acceptance_passed": false,
+      "hardware_enabled": false
+    },
+    "new_extra": {
+      "scope": "new_extra",
+      "samples": 48,
+      "models": {
+        "WM19": {
+          "physical_contacts": {
+            "object_finger": {
+              "known_labels": 48,
+              "positives": 24,
+              "negatives": 24,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_nonfinger": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_object": {
+              "known_labels": 48,
+              "positives": 4,
+              "negatives": 44,
+              "false_negatives": 4,
+              "false_positives": 2
+            },
+            "object_tray_wall": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 48,
+              "positives": 48,
+              "negatives": 0,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 48,
+              "positives": 3,
+              "negatives": 45,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "robot_self": {
+              "known_labels": 48,
+              "positives": 48,
+              "negatives": 0,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "new_contacts": {
+            "object_finger": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_nonfinger": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_object": {
+              "known_labels": 48,
+              "positives": 4,
+              "negatives": 44,
+              "false_negatives": 4,
+              "false_positives": 2
+            },
+            "object_tray_wall": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 48,
+              "positives": 12,
+              "negatives": 36,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 48,
+              "positives": 3,
+              "negatives": 45,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "robot_self": {
+              "known_labels": 48,
+              "positives": 7,
+              "negatives": 41,
+              "false_negatives": 0,
+              "false_positives": 1
+            }
+          },
+          "unlocalized_contacts": {
+            "object_finger": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_nonfinger": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_object": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_wall": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_self": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "retention": {
+            "terminal_grasp": {
+              "known_labels": 48,
+              "positives": 12,
+              "negatives": 36,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "grip_loss": {
+              "known_labels": 48,
+              "positives": 12,
+              "negatives": 36,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          }
+        },
+        "WM17": {
+          "physical_contacts": {
+            "object_finger": {
+              "known_labels": 48,
+              "positives": 24,
+              "negatives": 24,
+              "false_negatives": 0,
+              "false_positives": 1
+            },
+            "object_nonfinger": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_object": {
+              "known_labels": 48,
+              "positives": 4,
+              "negatives": 44,
+              "false_negatives": 4,
+              "false_positives": 1
+            },
+            "object_tray_wall": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 48,
+              "positives": 48,
+              "negatives": 0,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 48,
+              "positives": 3,
+              "negatives": 45,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "robot_self": {
+              "known_labels": 48,
+              "positives": 48,
+              "negatives": 0,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "new_contacts": {
+            "object_finger": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 1
+            },
+            "object_nonfinger": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_object": {
+              "known_labels": 48,
+              "positives": 4,
+              "negatives": 44,
+              "false_negatives": 4,
+              "false_positives": 1
+            },
+            "object_tray_wall": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 48,
+              "positives": 12,
+              "negatives": 36,
+              "false_negatives": 0,
+              "false_positives": 1
+            },
+            "robot_tray": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 48,
+              "positives": 3,
+              "negatives": 45,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "robot_self": {
+              "known_labels": 48,
+              "positives": 7,
+              "negatives": 41,
+              "false_negatives": 0,
+              "false_positives": 1
+            }
+          },
+          "unlocalized_contacts": {
+            "object_finger": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_nonfinger": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_object": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_wall": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_self": {
+              "known_labels": 48,
+              "positives": 0,
+              "negatives": 48,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "retention": {
+            "terminal_grasp": {
+              "known_labels": 48,
+              "positives": 12,
+              "negatives": 36,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "grip_loss": {
+              "known_labels": 48,
+              "positives": 12,
+              "negatives": 36,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          }
+        }
+      },
+      "WM19_weight_sha256": "2e200d67147784dac965aad6a9477c2f1e7f0f6ef330419f523e0c825a318b59",
+      "WM17_weight_sha256": "48edb967d34f263bfb843a84fcba49eeebe952b41ab95133d18d12d8005e3f1b",
+      "threshold": 0.5,
+      "observed_flow_mae_pixels": null,
+      "observed_flow_truth_available": false,
+      "visible_flow_scalar_cells": 0.0,
+      "masked_flow_samples": 0,
+      "independent_test": true,
+      "full_task_acceptance_passed": false,
+      "hardware_enabled": false,
+      "actual_start_grasp_only_retention": {
+        "WM19": {
+          "terminal_grasp": {
+            "known_labels": 24,
+            "positives": 12,
+            "negatives": 12,
+            "false_negatives": 0,
+            "false_positives": 0
+          },
+          "grip_loss": {
+            "known_labels": 24,
+            "positives": 12,
+            "negatives": 12,
+            "false_negatives": 0,
+            "false_positives": 0
+          }
+        },
+        "WM17": {
+          "terminal_grasp": {
+            "known_labels": 24,
+            "positives": 12,
+            "negatives": 12,
+            "false_negatives": 0,
+            "false_positives": 0
+          },
+          "grip_loss": {
+            "known_labels": 24,
+            "positives": 12,
+            "negatives": 12,
+            "false_negatives": 0,
+            "false_positives": 0
+          }
+        }
+      },
+      "actual_start_grasp_samples": 24
+    },
+    "new_vla": {
+      "scope": "new_vla",
+      "samples": 144,
+      "models": {
+        "WM19": {
+          "physical_contacts": {
+            "object_finger": {
+              "known_labels": 144,
+              "positives": 24,
+              "negatives": 120,
+              "false_negatives": 3,
+              "false_positives": 4
+            },
+            "object_nonfinger": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_object": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_wall": {
+              "known_labels": 144,
+              "positives": 1,
+              "negatives": 143,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 144,
+              "positives": 1,
+              "negatives": 143,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 144,
+              "positives": 144,
+              "negatives": 0,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 144,
+              "positives": 1,
+              "negatives": 143,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "robot_self": {
+              "known_labels": 144,
+              "positives": 144,
+              "negatives": 0,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "new_contacts": {
+            "object_finger": {
+              "known_labels": 144,
+              "positives": 24,
+              "negatives": 120,
+              "false_negatives": 3,
+              "false_positives": 4
+            },
+            "object_nonfinger": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_object": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_wall": {
+              "known_labels": 144,
+              "positives": 1,
+              "negatives": 143,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 144,
+              "positives": 1,
+              "negatives": 143,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 144,
+              "positives": 1,
+              "negatives": 143,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "robot_self": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "unlocalized_contacts": {
+            "object_finger": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_nonfinger": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_object": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_wall": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_self": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "retention": {
+            "terminal_grasp": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "grip_loss": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          }
+        },
+        "WM17": {
+          "physical_contacts": {
+            "object_finger": {
+              "known_labels": 144,
+              "positives": 24,
+              "negatives": 120,
+              "false_negatives": 3,
+              "false_positives": 4
+            },
+            "object_nonfinger": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_object": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_wall": {
+              "known_labels": 144,
+              "positives": 1,
+              "negatives": 143,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 144,
+              "positives": 1,
+              "negatives": 143,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 144,
+              "positives": 144,
+              "negatives": 0,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 144,
+              "positives": 1,
+              "negatives": 143,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "robot_self": {
+              "known_labels": 144,
+              "positives": 144,
+              "negatives": 0,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "new_contacts": {
+            "object_finger": {
+              "known_labels": 144,
+              "positives": 24,
+              "negatives": 120,
+              "false_negatives": 3,
+              "false_positives": 4
+            },
+            "object_nonfinger": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_object": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_wall": {
+              "known_labels": 144,
+              "positives": 1,
+              "negatives": 143,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 144,
+              "positives": 1,
+              "negatives": 143,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 144,
+              "positives": 1,
+              "negatives": 143,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "robot_self": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "unlocalized_contacts": {
+            "object_finger": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_nonfinger": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_object": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_wall": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_self": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "retention": {
+            "terminal_grasp": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "grip_loss": {
+              "known_labels": 144,
+              "positives": 0,
+              "negatives": 144,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          }
+        }
+      },
+      "WM19_weight_sha256": "2e200d67147784dac965aad6a9477c2f1e7f0f6ef330419f523e0c825a318b59",
+      "WM17_weight_sha256": "48edb967d34f263bfb843a84fcba49eeebe952b41ab95133d18d12d8005e3f1b",
+      "threshold": 0.5,
+      "observed_flow_mae_pixels": null,
+      "observed_flow_truth_available": false,
+      "visible_flow_scalar_cells": 0.0,
+      "masked_flow_samples": 0,
+      "independent_test": true,
+      "full_task_acceptance_passed": false,
+      "hardware_enabled": false
+    },
+    "paired_lateral": {
+      "scope": "paired_lateral",
+      "samples": 192,
+      "models": {
+        "WM19": {
+          "physical_contacts": {
+            "object_finger": {
+              "known_labels": 192,
+              "positives": 44,
+              "negatives": 148,
+              "false_negatives": 8,
+              "false_positives": 4
+            },
+            "object_nonfinger": {
+              "known_labels": 192,
+              "positives": 1,
+              "negatives": 191,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "object_object": {
+              "known_labels": 192,
+              "positives": 3,
+              "negatives": 189,
+              "false_negatives": 3,
+              "false_positives": 0
+            },
+            "object_tray_wall": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 192,
+              "positives": 192,
+              "negatives": 0,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 192,
+              "positives": 4,
+              "negatives": 188,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "robot_self": {
+              "known_labels": 192,
+              "positives": 192,
+              "negatives": 0,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "new_contacts": {
+            "object_finger": {
+              "known_labels": 192,
+              "positives": 44,
+              "negatives": 148,
+              "false_negatives": 9,
+              "false_positives": 3
+            },
+            "object_nonfinger": {
+              "known_labels": 192,
+              "positives": 1,
+              "negatives": 191,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "object_object": {
+              "known_labels": 192,
+              "positives": 3,
+              "negatives": 189,
+              "false_negatives": 3,
+              "false_positives": 0
+            },
+            "object_tray_wall": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 192,
+              "positives": 4,
+              "negatives": 188,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "robot_self": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "unlocalized_contacts": {
+            "object_finger": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_nonfinger": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_object": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_wall": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_self": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "retention": {
+            "terminal_grasp": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "grip_loss": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          }
+        },
+        "WM17": {
+          "physical_contacts": {
+            "object_finger": {
+              "known_labels": 192,
+              "positives": 44,
+              "negatives": 148,
+              "false_negatives": 7,
+              "false_positives": 6
+            },
+            "object_nonfinger": {
+              "known_labels": 192,
+              "positives": 1,
+              "negatives": 191,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "object_object": {
+              "known_labels": 192,
+              "positives": 3,
+              "negatives": 189,
+              "false_negatives": 3,
+              "false_positives": 0
+            },
+            "object_tray_wall": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 192,
+              "positives": 192,
+              "negatives": 0,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 192,
+              "positives": 4,
+              "negatives": 188,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "robot_self": {
+              "known_labels": 192,
+              "positives": 192,
+              "negatives": 0,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "new_contacts": {
+            "object_finger": {
+              "known_labels": 192,
+              "positives": 44,
+              "negatives": 148,
+              "false_negatives": 8,
+              "false_positives": 5
+            },
+            "object_nonfinger": {
+              "known_labels": 192,
+              "positives": 1,
+              "negatives": 191,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "object_object": {
+              "known_labels": 192,
+              "positives": 3,
+              "negatives": 189,
+              "false_negatives": 3,
+              "false_positives": 0
+            },
+            "object_tray_wall": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 192,
+              "positives": 4,
+              "negatives": 188,
+              "false_negatives": 1,
+              "false_positives": 0
+            },
+            "robot_self": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "unlocalized_contacts": {
+            "object_finger": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_nonfinger": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_object": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_wall": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_tray_bottom": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "object_floor": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_tray": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_floor": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "robot_self": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          },
+          "retention": {
+            "terminal_grasp": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            },
+            "grip_loss": {
+              "known_labels": 192,
+              "positives": 0,
+              "negatives": 192,
+              "false_negatives": 0,
+              "false_positives": 0
+            }
+          }
+        }
+      },
+      "WM19_weight_sha256": "2e200d67147784dac965aad6a9477c2f1e7f0f6ef330419f523e0c825a318b59",
+      "WM17_weight_sha256": "48edb967d34f263bfb843a84fcba49eeebe952b41ab95133d18d12d8005e3f1b",
+      "threshold": 0.5,
+      "observed_flow_mae_pixels": 0.08314445844816261,
+      "observed_flow_truth_available": true,
+      "visible_flow_scalar_cells": 34104.0,
+      "masked_flow_samples": 0,
+      "independent_test": true,
+      "full_task_acceptance_passed": false,
+      "hardware_enabled": false
+    }
+  },
+  "scored_candidates": 504,
+  "weight_sha256": "2e200d67147784dac965aad6a9477c2f1e7f0f6ef330419f523e0c825a318b59",
+  "threshold": 0.5,
+  "independent_used_for_selection": false,
+  "compute_host": "M2 Max",
+  "hardware_enabled": false,
+  "full_task_acceptance_passed": false
+}

@@ -1,0 +1,621 @@
+{
+  "physical_reliability_subgate_passed": false,
+  "failed_checks": [
+    {
+      "scope": "new_physical",
+      "family": "physical_contacts",
+      "kind": "object_nonfinger",
+      "known_labels": 120,
+      "positives": 12,
+      "negatives": 108,
+      "false_negatives": 2,
+      "false_positives": 3
+    },
+    {
+      "scope": "new_physical",
+      "family": "physical_contacts",
+      "kind": "object_object",
+      "known_labels": 120,
+      "positives": 12,
+      "negatives": 108,
+      "false_negatives": 2,
+      "false_positives": 3
+    },
+    {
+      "scope": "new_physical",
+      "family": "new_contacts",
+      "kind": "object_nonfinger",
+      "known_labels": 120,
+      "positives": 12,
+      "negatives": 108,
+      "false_negatives": 2,
+      "false_positives": 3
+    },
+    {
+      "scope": "new_physical",
+      "family": "new_contacts",
+      "kind": "object_object",
+      "known_labels": 120,
+      "positives": 12,
+      "negatives": 108,
+      "false_negatives": 2,
+      "false_positives": 3
+    },
+    {
+      "scope": "new_extra",
+      "family": "physical_contacts",
+      "kind": "object_object",
+      "known_labels": 48,
+      "positives": 4,
+      "negatives": 44,
+      "false_negatives": 4,
+      "false_positives": 2
+    },
+    {
+      "scope": "new_extra",
+      "family": "physical_contacts",
+      "kind": "robot_floor",
+      "known_labels": 48,
+      "positives": 3,
+      "negatives": 45,
+      "false_negatives": 1,
+      "false_positives": 0
+    },
+    {
+      "scope": "new_extra",
+      "family": "new_contacts",
+      "kind": "object_object",
+      "known_labels": 48,
+      "positives": 4,
+      "negatives": 44,
+      "false_negatives": 4,
+      "false_positives": 2
+    },
+    {
+      "scope": "new_extra",
+      "family": "new_contacts",
+      "kind": "robot_floor",
+      "known_labels": 48,
+      "positives": 3,
+      "negatives": 45,
+      "false_negatives": 1,
+      "false_positives": 0
+    },
+    {
+      "scope": "new_vla",
+      "family": "physical_contacts",
+      "kind": "object_tray_wall",
+      "known_labels": 144,
+      "positives": 1,
+      "negatives": 143,
+      "false_negatives": 1,
+      "false_positives": 0
+    },
+    {
+      "scope": "new_vla",
+      "family": "physical_contacts",
+      "kind": "robot_floor",
+      "known_labels": 144,
+      "positives": 1,
+      "negatives": 143,
+      "false_negatives": 1,
+      "false_positives": 0
+    },
+    {
+      "scope": "new_vla",
+      "family": "new_contacts",
+      "kind": "object_tray_wall",
+      "known_labels": 144,
+      "positives": 1,
+      "negatives": 143,
+      "false_negatives": 1,
+      "false_positives": 0
+    },
+    {
+      "scope": "new_vla",
+      "family": "new_contacts",
+      "kind": "robot_floor",
+      "known_labels": 144,
+      "positives": 1,
+      "negatives": 143,
+      "false_negatives": 1,
+      "false_positives": 0
+    },
+    {
+      "scope": "paired_lateral",
+      "family": "physical_contacts",
+      "kind": "object_nonfinger",
+      "known_labels": 192,
+      "positives": 1,
+      "negatives": 191,
+      "false_negatives": 1,
+      "false_positives": 0
+    },
+    {
+      "scope": "paired_lateral",
+      "family": "physical_contacts",
+      "kind": "object_object",
+      "known_labels": 192,
+      "positives": 3,
+      "negatives": 189,
+      "false_negatives": 3,
+      "false_positives": 0
+    },
+    {
+      "scope": "paired_lateral",
+      "family": "physical_contacts",
+      "kind": "robot_floor",
+      "known_labels": 192,
+      "positives": 4,
+      "negatives": 188,
+      "false_negatives": 1,
+      "false_positives": 0
+    },
+    {
+      "scope": "paired_lateral",
+      "family": "new_contacts",
+      "kind": "object_nonfinger",
+      "known_labels": 192,
+      "positives": 1,
+      "negatives": 191,
+      "false_negatives": 1,
+      "false_positives": 0
+    },
+    {
+      "scope": "paired_lateral",
+      "family": "new_contacts",
+      "kind": "object_object",
+      "known_labels": 192,
+      "positives": 3,
+      "negatives": 189,
+      "false_negatives": 3,
+      "false_positives": 0
+    },
+    {
+      "scope": "paired_lateral",
+      "family": "new_contacts",
+      "kind": "robot_floor",
+      "known_labels": 192,
+      "positives": 4,
+      "negatives": 188,
+      "false_negatives": 1,
+      "false_positives": 0
+    },
+    {
+      "scope": "original_validation",
+      "family": "physical_contacts",
+      "kind": "object_nonfinger",
+      "positives": 121,
+      "negatives": 3339,
+      "false_negatives": 36,
+      "false_positives": 32
+    },
+    {
+      "scope": "original_validation",
+      "family": "physical_contacts",
+      "kind": "object_object",
+      "positives": 123,
+      "negatives": 3337,
+      "false_negatives": 72,
+      "false_positives": 39
+    },
+    {
+      "scope": "original_validation",
+      "family": "physical_contacts",
+      "kind": "object_tray_wall",
+      "positives": 640,
+      "negatives": 2820,
+      "false_negatives": 29,
+      "false_positives": 46
+    },
+    {
+      "scope": "original_validation",
+      "family": "physical_contacts",
+      "kind": "robot_tray",
+      "positives": 650,
+      "negatives": 2810,
+      "false_negatives": 9,
+      "false_positives": 21
+    },
+    {
+      "scope": "original_validation",
+      "family": "new_contacts",
+      "kind": "object_nonfinger",
+      "positives": 121,
+      "negatives": 3339,
+      "false_negatives": 36,
+      "false_positives": 32
+    },
+    {
+      "scope": "original_validation",
+      "family": "new_contacts",
+      "kind": "object_object",
+      "positives": 123,
+      "negatives": 3337,
+      "false_negatives": 73,
+      "false_positives": 35
+    },
+    {
+      "scope": "original_validation",
+      "family": "new_contacts",
+      "kind": "object_tray_wall",
+      "positives": 640,
+      "negatives": 2820,
+      "false_negatives": 34,
+      "false_positives": 44
+    },
+    {
+      "scope": "original_validation",
+      "family": "new_contacts",
+      "kind": "robot_tray",
+      "positives": 650,
+      "negatives": 2810,
+      "false_negatives": 9,
+      "false_positives": 21
+    },
+    {
+      "scope": "pair_validation",
+      "family": "physical_contacts",
+      "kind": "object_object",
+      "positives": 22,
+      "negatives": 98,
+      "false_negatives": 10,
+      "false_positives": 0
+    },
+    {
+      "scope": "pair_validation",
+      "family": "new_contacts",
+      "kind": "object_object",
+      "positives": 22,
+      "negatives": 98,
+      "false_negatives": 10,
+      "false_positives": 0
+    },
+    {
+      "scope": "entity_validation",
+      "family": "new_contacts",
+      "kind": "robot_self",
+      "positives": 9,
+      "negatives": 132,
+      "false_negatives": 5,
+      "false_positives": 0
+    },
+    {
+      "scope": "visibility_validation",
+      "family": "physical_contacts",
+      "kind": "object_nonfinger",
+      "positives": 12,
+      "negatives": 156,
+      "false_negatives": 3,
+      "false_positives": 3
+    },
+    {
+      "scope": "visibility_validation",
+      "family": "physical_contacts",
+      "kind": "object_object",
+      "positives": 13,
+      "negatives": 155,
+      "false_negatives": 1,
+      "false_positives": 4
+    },
+    {
+      "scope": "visibility_validation",
+      "family": "new_contacts",
+      "kind": "object_nonfinger",
+      "positives": 12,
+      "negatives": 156,
+      "false_negatives": 3,
+      "false_positives": 3
+    },
+    {
+      "scope": "visibility_validation",
+      "family": "new_contacts",
+      "kind": "robot_self",
+      "positives": 7,
+      "negatives": 161,
+      "false_negatives": 2,
+      "false_positives": 0
+    },
+    {
+      "scope": "lateral_validation",
+      "family": "physical_contacts",
+      "kind": "object_object",
+      "positives": 2,
+      "negatives": 254,
+      "false_negatives": 2,
+      "false_positives": 1
+    },
+    {
+      "scope": "lateral_validation",
+      "family": "physical_contacts",
+      "kind": "object_tray_wall",
+      "positives": 2,
+      "negatives": 254,
+      "false_negatives": 2,
+      "false_positives": 0
+    },
+    {
+      "scope": "lateral_validation",
+      "family": "physical_contacts",
+      "kind": "robot_floor",
+      "positives": 8,
+      "negatives": 248,
+      "false_negatives": 6,
+      "false_positives": 0
+    },
+    {
+      "scope": "lateral_validation",
+      "family": "new_contacts",
+      "kind": "object_object",
+      "positives": 2,
+      "negatives": 254,
+      "false_negatives": 2,
+      "false_positives": 1
+    },
+    {
+      "scope": "lateral_validation",
+      "family": "new_contacts",
+      "kind": "object_tray_wall",
+      "positives": 2,
+      "negatives": 254,
+      "false_negatives": 2,
+      "false_positives": 0
+    },
+    {
+      "scope": "lateral_validation",
+      "family": "new_contacts",
+      "kind": "robot_floor",
+      "positives": 8,
+      "negatives": 248,
+      "false_negatives": 6,
+      "false_positives": 0
+    },
+    {
+      "scope": "paired_lateral",
+      "family": "physical_contacts",
+      "kind": "object_finger",
+      "known_labels": 192,
+      "positives": 44,
+      "negatives": 148,
+      "false_negatives": 8,
+      "false_positives": 4
+    },
+    {
+      "scope": "paired_lateral",
+      "family": "new_contacts",
+      "kind": "object_finger",
+      "known_labels": 192,
+      "positives": 44,
+      "negatives": 148,
+      "false_negatives": 9,
+      "false_positives": 3
+    },
+    {
+      "scope": "lateral_validation",
+      "family": "physical_contacts",
+      "kind": "object_finger",
+      "positives": 66,
+      "negatives": 190,
+      "false_negatives": 4,
+      "false_positives": 7
+    },
+    {
+      "scope": "lateral_validation",
+      "family": "new_contacts",
+      "kind": "object_finger",
+      "positives": 66,
+      "negatives": 190,
+      "false_negatives": 4,
+      "false_positives": 7
+    }
+  ],
+  "missing_scope_support": [
+    {
+      "scope": "new_physical",
+      "family": "new_contacts",
+      "kind": "robot_self",
+      "positives": 0,
+      "negatives": 120
+    },
+    {
+      "scope": "new_extra",
+      "family": "physical_contacts",
+      "kind": "object_nonfinger",
+      "positives": 0,
+      "negatives": 48
+    },
+    {
+      "scope": "new_extra",
+      "family": "physical_contacts",
+      "kind": "object_tray_wall",
+      "positives": 0,
+      "negatives": 48
+    },
+    {
+      "scope": "new_extra",
+      "family": "physical_contacts",
+      "kind": "robot_tray",
+      "positives": 0,
+      "negatives": 48
+    },
+    {
+      "scope": "new_extra",
+      "family": "new_contacts",
+      "kind": "object_nonfinger",
+      "positives": 0,
+      "negatives": 48
+    },
+    {
+      "scope": "new_extra",
+      "family": "new_contacts",
+      "kind": "object_tray_wall",
+      "positives": 0,
+      "negatives": 48
+    },
+    {
+      "scope": "new_extra",
+      "family": "new_contacts",
+      "kind": "robot_tray",
+      "positives": 0,
+      "negatives": 48
+    },
+    {
+      "scope": "new_vla",
+      "family": "physical_contacts",
+      "kind": "object_nonfinger",
+      "positives": 0,
+      "negatives": 144
+    },
+    {
+      "scope": "new_vla",
+      "family": "physical_contacts",
+      "kind": "object_object",
+      "positives": 0,
+      "negatives": 144
+    },
+    {
+      "scope": "new_vla",
+      "family": "physical_contacts",
+      "kind": "robot_tray",
+      "positives": 0,
+      "negatives": 144
+    },
+    {
+      "scope": "new_vla",
+      "family": "new_contacts",
+      "kind": "object_nonfinger",
+      "positives": 0,
+      "negatives": 144
+    },
+    {
+      "scope": "new_vla",
+      "family": "new_contacts",
+      "kind": "object_object",
+      "positives": 0,
+      "negatives": 144
+    },
+    {
+      "scope": "new_vla",
+      "family": "new_contacts",
+      "kind": "robot_tray",
+      "positives": 0,
+      "negatives": 144
+    },
+    {
+      "scope": "new_vla",
+      "family": "new_contacts",
+      "kind": "robot_self",
+      "positives": 0,
+      "negatives": 144
+    },
+    {
+      "scope": "paired_lateral",
+      "family": "physical_contacts",
+      "kind": "object_tray_wall",
+      "positives": 0,
+      "negatives": 192
+    },
+    {
+      "scope": "paired_lateral",
+      "family": "physical_contacts",
+      "kind": "robot_tray",
+      "positives": 0,
+      "negatives": 192
+    },
+    {
+      "scope": "paired_lateral",
+      "family": "new_contacts",
+      "kind": "object_tray_wall",
+      "positives": 0,
+      "negatives": 192
+    },
+    {
+      "scope": "paired_lateral",
+      "family": "new_contacts",
+      "kind": "robot_tray",
+      "positives": 0,
+      "negatives": 192
+    },
+    {
+      "scope": "paired_lateral",
+      "family": "new_contacts",
+      "kind": "robot_self",
+      "positives": 0,
+      "negatives": 192
+    },
+    {
+      "scope": "pair_validation",
+      "family": "physical_contacts",
+      "kind": "robot_tray",
+      "positives": 0,
+      "negatives": 120
+    },
+    {
+      "scope": "pair_validation",
+      "family": "physical_contacts",
+      "kind": "robot_floor",
+      "positives": 0,
+      "negatives": 120
+    },
+    {
+      "scope": "pair_validation",
+      "family": "new_contacts",
+      "kind": "robot_tray",
+      "positives": 0,
+      "negatives": 120
+    },
+    {
+      "scope": "pair_validation",
+      "family": "new_contacts",
+      "kind": "robot_floor",
+      "positives": 0,
+      "negatives": 120
+    },
+    {
+      "scope": "pair_validation",
+      "family": "new_contacts",
+      "kind": "robot_self",
+      "positives": 0,
+      "negatives": 120
+    },
+    {
+      "scope": "lateral_validation",
+      "family": "physical_contacts",
+      "kind": "object_nonfinger",
+      "positives": 0,
+      "negatives": 256
+    },
+    {
+      "scope": "lateral_validation",
+      "family": "physical_contacts",
+      "kind": "robot_tray",
+      "positives": 0,
+      "negatives": 256
+    },
+    {
+      "scope": "lateral_validation",
+      "family": "new_contacts",
+      "kind": "object_nonfinger",
+      "positives": 0,
+      "negatives": 256
+    },
+    {
+      "scope": "lateral_validation",
+      "family": "new_contacts",
+      "kind": "robot_tray",
+      "positives": 0,
+      "negatives": 256
+    },
+    {
+      "scope": "lateral_validation",
+      "family": "new_contacts",
+      "kind": "robot_self",
+      "positives": 0,
+      "negatives": 256
+    }
+  ],
+  "trained_mask_gate_passed": true,
+  "Jev_current_model_interface_tested": false,
+  "full_task_acceptance_passed": false,
+  "hardware_enabled": false
+}

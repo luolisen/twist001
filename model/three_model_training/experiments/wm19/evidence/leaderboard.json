@@ -1,0 +1,151 @@
+{
+  "rounds": [
+    {
+      "round": 1,
+      "target_epoch": 6,
+      "leaderboard": [
+        {
+          "candidate": "c07",
+          "cumulative_epochs": 6,
+          "last_epoch_key": 2.013172306966193,
+          "best_epoch": 5,
+          "best_key": 1.980332962243963
+        },
+        {
+          "candidate": "c05",
+          "cumulative_epochs": 6,
+          "last_epoch_key": 2.049299845556735,
+          "best_epoch": 5,
+          "best_key": 2.0180938956004377
+        },
+        {
+          "candidate": "c01",
+          "cumulative_epochs": 6,
+          "last_epoch_key": 2.0532670397904584,
+          "best_epoch": 5,
+          "best_key": 2.0504096026636462
+        },
+        {
+          "candidate": "c03",
+          "cumulative_epochs": 6,
+          "last_epoch_key": 2.0536649709626653,
+          "best_epoch": 6,
+          "best_key": 2.0536649709626653
+        },
+        {
+          "candidate": "c02",
+          "cumulative_epochs": 6,
+          "last_epoch_key": 2.0656035093988327,
+          "best_epoch": 3,
+          "best_key": 2.0551404216836597
+        },
+        {
+          "candidate": "c04",
+          "cumulative_epochs": 6,
+          "last_epoch_key": 2.074378817211315,
+          "best_epoch": 5,
+          "best_key": 2.0469844429491535
+        },
+        {
+          "candidate": "c08",
+          "cumulative_epochs": 6,
+          "last_epoch_key": 2.104228655497871,
+          "best_epoch": 4,
+          "best_key": 2.061631013553132
+        },
+        {
+          "candidate": "c06",
+          "cumulative_epochs": 6,
+          "last_epoch_key": 2.1220348169536436,
+          "best_epoch": 5,
+          "best_key": 2.059179317341152
+        }
+      ],
+      "survivors": [
+        "c07",
+        "c05",
+        "c01",
+        "c03"
+      ]
+    },
+    {
+      "round": 2,
+      "target_epoch": 12,
+      "leaderboard": [
+        {
+          "candidate": "c03",
+          "cumulative_epochs": 12,
+          "last_epoch_key": 2.063953918884759,
+          "best_epoch": 6,
+          "best_key": 2.0536649709626653
+        },
+        {
+          "candidate": "c05",
+          "cumulative_epochs": 12,
+          "last_epoch_key": 2.0687766393279032,
+          "best_epoch": 5,
+          "best_key": 2.0180938956004377
+        },
+        {
+          "candidate": "c01",
+          "cumulative_epochs": 12,
+          "last_epoch_key": 2.071415171010739,
+          "best_epoch": 5,
+          "best_key": 2.0504096026636462
+        },
+        {
+          "candidate": "c07",
+          "cumulative_epochs": 12,
+          "last_epoch_key": 2.0760518210861028,
+          "best_epoch": 5,
+          "best_key": 1.980332962243963
+        }
+      ],
+      "survivors": [
+        "c03",
+        "c05"
+      ]
+    },
+    {
+      "round": 3,
+      "target_epoch": 24,
+      "leaderboard": [
+        {
+          "candidate": "c05",
+          "cumulative_epochs": 24,
+          "last_epoch_key": 2.100002090602555,
+          "best_epoch": 17,
+          "best_key": 2.0013144598345045
+        },
+        {
+          "candidate": "c03",
+          "cumulative_epochs": 24,
+          "last_epoch_key": 2.1070586199932237,
+          "best_epoch": 17,
+          "best_key": 2.026295784554716
+        }
+      ],
+      "survivors": [
+        "c05"
+      ]
+    },
+    {
+      "round": 4,
+      "target_epoch": 30,
+      "leaderboard": [
+        {
+          "candidate": "c05",
+          "cumulative_epochs": 30,
+          "last_epoch_key": 2.122360258343129,
+          "best_epoch": 17,
+          "best_key": 2.0013144598345045
+        }
+      ],
+      "survivors": [
+        "c05"
+      ]
+    }
+  ],
+  "total_candidate_epochs": 102,
+  "total_updates": 36516
+}
