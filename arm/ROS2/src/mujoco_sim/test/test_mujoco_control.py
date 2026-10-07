@@ -82,19 +82,25 @@ class MujocoControlTest(unittest.TestCase):
             / 'arm_mjcf.xml'
         )
         root = ET.parse(mjcf_path).getroot()
-        joints = root.findall('.//joint')
+        joints = root.findall('.//worldbody//joint')
         actuators = root.findall('./actuator/position')
 
-        self.assertEqual(len(joints), 6)
-        self.assertEqual(len(actuators), 6)
-        self.assertTrue(all(
-            joint.get('actuatorfrcrange') == '-300 300'
-            for joint in joints
-        ))
-        for actuator in actuators:
-            self.assertEqual(actuator.get('kp'), '800')
-            self.assertEqual(actuator.get('kv'), '60')
-            self.assertEqual(actuator.get('forcerange'), '-300 300')
+        self.assertEqual(len(joints), 8)
+        self.assertEqual(len(actuators), 7)
+        arm_actuators = [a for a in actuators if a.get('joint')]
+        self.assertEqual([a.get('joint') for a in arm_actuators],
+                         [f'j{i}_joint' for i in range(1, 7)])
+        for actuator in arm_actuators:
+            self.assertEqual(actuator.get('kp'), '100')
+            self.assertEqual(actuator.get('kv'), '10')
+            self.assertEqual(actuator.get('forcerange'), '-20 20')
+        gripper = next(a for a in actuators if a.get('name') == 'g')
+        self.assertEqual(gripper.get('tendon'), 'gripper_opening')
+        self.assertEqual(gripper.get('ctrlrange'), '0 .08')
+        self.assertEqual(gripper.get('kp'), '200')
+        self.assertEqual(gripper.get('kv'), '5')
+        self.assertEqual(gripper.get('forcerange'), '-10 10')
+
 
 
 if __name__ == '__main__':

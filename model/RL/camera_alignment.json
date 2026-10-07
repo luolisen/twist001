@@ -1,0 +1,50 @@
+{
+  "board_m": [
+    0.593,
+    0.565
+  ],
+  "base_table_xy_m": [
+    0.2965,
+    0.081
+  ],
+  "camera_table_xyz_m": [
+    0.583,
+    0.03,
+    0.355
+  ],
+  "aim_table_xyz_m": [
+    0.2965,
+    0.2825,
+    0
+  ],
+  "fovy_provisional_deg": 48,
+  "camera_models_identical_user_confirmed": true,
+  "optical_estimate_source": "Prior A4 measurement of identical wrist camera; approximate, not full intrinsic calibration",
+  "render_wh": [
+    1280,
+    720
+  ],
+  "robot_yaw_deg": -90,
+  "reset_direction": "board +Y toward board center; user confirmed",
+  "workspace_polygon_table_xy_m": null,
+  "excluded_regions_table_xy_m": null,
+  "status": "visual_alignment_candidate_not_calibrated",
+  "unverified": [
+    "45.2 is approximate A4 estimate; per-device intrinsics and distortion not measured",
+    "base x center assumed from prior layout",
+    "workspace and clearance boundaries"
+  ],
+  "hardware_motion": false,
+  "nominal_aim_table_xyz_m": [
+    0.2965,
+    0.2825,
+    0
+  ],
+  "render_aim_table_xyz_m": [
+    0.2965,
+    0.2825,
+    0.1
+  ],
+  "fit_method": "Manual comparison of six candidate renders to user supplied real preview; not a numerical calibration. Camera position unchanged. Aim height is a virtual orientation fit, not a request to move the physical target.",
+  "training_modified": false
+}

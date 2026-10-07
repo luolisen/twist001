@@ -1,0 +1,46 @@
+{
+  "version": "REV6 Camera45.2 + aligned front camera",
+  "source_base_sha256": "49cc167d19aba3cf02702e98f1f95e64fabc3dab05aa267ec67d476d4028c7eb",
+  "simulation_only": true,
+  "real_camera_calibration_complete": false,
+  "models": [
+    {
+      "source": "outputs/camera_reference/aligned_camera_scene.xml",
+      "source_sha256": "986230eea6327b3e1f6a4b470eb44d1582c53c0ac463c3670da4547319da9bc8",
+      "published_path": "src/model/mjcf/arm_mjcf.xml",
+      "published_sha256": "8133279b2cedcf6c69c19947fa112b2b3d1e0da99a4fd876d0811976076dda30",
+      "changes": "Only XML serialization and asset file paths; camera, geometry, dynamics and keyframes unchanged."
+    },
+    {
+      "source": "outputs/camera_training_handoff/expert_front_workspace_20261005/task_scene.xml",
+      "source_sha256": "02defa53b8d934771f32aed1d0b767bd1a6a820715d5fc0a7eaffa46189cf9ce",
+      "published_path": "src/model/mjcf/task_scene.xml",
+      "published_sha256": "79a047d39bd3e3e2213948e570ea55733b81a077c2c7f125432b94464a1f7ba0",
+      "changes": "Only XML serialization and asset file paths; camera, geometry, dynamics and keyframes unchanged."
+    }
+  ],
+  "assets": {
+    "src/model/meshes/Right_Rack_Slider.stl": "9e7238024b2bf2f0142ae8588aa22f82425109a6b400b617092a57f389d82f09",
+    "src/model/meshes/Wrist_Flange.stl": "7a800602050591479a481e1e40fde37f3a0947dd07dc4003bb47851ad4aa5840",
+    "src/model/meshes/j5_Link.STL": "3904200fb9faef9e57975254e1c6eccfc5cc9fa5159e41ce46fd1b0c701ab4fc",
+    "src/model/meshes/j4_Link.STL": "f445efbcb88392095e6bb51f88883a64405221f4f1eec390f889d8f05eb83dce",
+    "src/model/meshes/Pinion_Retainer.stl": "f380407c66f5f3381ff06263de084f395b5b7db9c0ab4184a38d8b4b44d4d740",
+    "src/model/meshes/Quick_Latch.stl": "5aa64713da8561547d5e9871e83c59525b70044a221f97827846f139a1806b41",
+    "src/model/meshes/Right_Finger.stl": "e6ca357f4642af80882d5fa66e14307b17d829a569210e2dc307b82dde437810",
+    "src/model/meshes/Left_Outer_Loose_C_Guide_Addon.stl": "c5fe88f193ef529f620d998dee9a31dd84df3aab6f9bb4f4fb65d3d0584fbc8a",
+    "src/model/meshes/Left_Finger.stl": "39e84ae29ef7f435b61d44c13ad7664c0421b7f119f21e33ee8f640c9c79bff2",
+    "src/model/meshes/Motor_Mount_Frame.stl": "bd046136d9b3722fd3639e3e84f0dbeae76be1da7d43610bdb1d835a130bb24c",
+    "src/model/meshes/Gripper_Base.stl": "70206d5cdb503af7d0259bdc7cb0cda7706855554743be00a22ada676129a3aa",
+    "src/model/meshes/Replaceable_Hub_Insert.stl": "c4d92a61e4af8d042b2cbd6efa7ca4fa9779e2b0e9325d9b75fc1b1a1a5b8c6b",
+    "src/model/meshes/j2_Link.STL": "899465e414a8bc7c92bcb7d49df2979f61810c08f8484402776940909eb97411",
+    "src/model/meshes/j3_Link.STL": "3b2f2efbad4484acbc3be47532f5d548d9eb07817918ac9947cc2949514ec23a",
+    "src/model/meshes/Left_Rack_Slider.stl": "820e69143e56fe4f31121f8ae3f190dae78f8d303a4ed75638ad146e74bbc777",
+    "src/model/meshes/Camera_Fusion.stl": "ea7df98a86de4ff8c053500eb223f7b157851e9e23dba2716f31a1a742cfb7ed",
+    "src/model/meshes/Motor_Driver_Module.stl": "b787ad10e6b5b69db34b090ac2731fba66257beac252187d31db35797becb063",
+    "src/model/meshes/Pinion.stl": "b5ddc6b3107b1e865a267b8ee961286da81921d1dca074d384b9859f3a2289b2",
+    "src/model/meshes/Right_Outer_Loose_C_Guide_Addon.stl": "46ec83ffddaa0d0e8029ad25dda973b83ad0e536c3966e38641668967f401df6",
+    "src/model/meshes/j1_Link.STL": "06e19ac61b2993b0e82f10de4950bc62d1cb3877b028fffeebc962d386b52166",
+    "src/model/meshes/base_link.STL": "6c9c98df1fa9cc05ac39ff7b7cf3bbc6d259999a300f59375d0469a43b95dad6",
+    "src/model/img/desert.png": "0551f33e79fd3ac9cabb921470892bc691c85a5d937445c75d14614c06a95404"
+  }
+}

@@ -1,0 +1,8 @@
+config/private/
+ESP32_Final/private_config.h
+build*/
+**/build*/
+__pycache__/
+*.bin
+*.elf
+*.map

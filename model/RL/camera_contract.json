@@ -1,0 +1,115 @@
+{
+  "status": "visual_alignment_candidate_not_calibrated",
+  "hardware_motion": false,
+  "front": {
+    "name": "front_rgb",
+    "position_world_m": [
+      0.3665,
+      0.029,
+      0.355
+    ],
+    "virtual_aim_world_m": [
+      0.08,
+      0.2815,
+      0.1
+    ],
+    "fovy_deg": 48,
+    "render_wh": [
+      640,
+      360
+    ],
+    "native_reference_wh": [
+      1280,
+      720
+    ],
+    "policy_wh": [
+      256,
+      256
+    ],
+    "content_wh": [
+      256,
+      144
+    ],
+    "padding_top_bottom_px": [
+      56,
+      56
+    ],
+    "full_view_retained": true,
+    "resize_filter": "Pillow LANCZOS"
+  },
+  "wrist": {
+    "name": "wrist_camera",
+    "optical_pose": "unchanged frozen49cc167d rigid wrist camera",
+    "render_wh": [
+      640,
+      360
+    ],
+    "policy_wh": [
+      512,
+      512
+    ],
+    "content_wh": [
+      512,
+      288
+    ],
+    "padding_top_bottom_px": [
+      112,
+      112
+    ],
+    "full_view_retained": true,
+    "resize_filter": "Pillow LANCZOS"
+  },
+  "robot_yaw_deg": -90,
+  "pivot_world_m": [
+    0.08,
+    0.08,
+    0
+  ],
+  "simulation_initial_joints_rad": [
+    0,
+    -0.05,
+    0.1,
+    0,
+    0,
+    0
+  ],
+  "initial_pose_reason": "Zero-pose startup had nonadjacent j1-j4/j5 contact at recorded frames 1..3. Sim-only small elbow bend removes that contact. No real robot command or pose acceptance implied.",
+  "board_world_xy_bounds_m": [
+    [
+      -0.2165,
+      -0.001
+    ],
+    [
+      0.3765,
+      0.564
+    ]
+  ],
+  "board_size_m": [
+    0.593,
+    0.565
+  ],
+  "board_top_world_z_m": 0,
+  "workspace_polygon_measured": false,
+  "base_side_exclusions_measured": false,
+  "real_robot_release": false,
+  "task_sampling": "World source x[.10,.16], y[.23,.27]; target x[.015,.065], y[.28,.32]; all cube corners must stay strictly above base mesh front + .03m across the entire trajectory. Simulation geometry, not measured real workspace.",
+  "strict_geometry_gate": {
+    "initial_and_approach_all_8_corners_frustum_margin": 0.02,
+    "initial_visible_policy_pixels_min": 64,
+    "excluded_strip_y_lte_m": 0.1900000031686573,
+    "base_margin_m": 0.03,
+    "whole_horizontal_strip_excluded": true,
+    "full_object_gate_cannot_be_replaced_by_union_pixel_gate": true
+  },
+  "all_stages_all_8_corners_front_frustum_margin": 0.02,
+  "scene_sha256": "02defa53b8d934771f32aed1d0b767bd1a6a820715d5fc0a7eaffa46189cf9ce",
+  "frozen_source_model_sha256": "49cc167d19aba3cf02702e98f1f95e64fabc3dab05aa267ec67d476d4028c7eb",
+  "accepted_camera_parameters_sha256": "5c891141cdd3036bd11386fec51dd9697b26db7f521895bb0067763d3bdb533f",
+  "pixel_visibility_gate": {
+    "min_visible_pixels": 4,
+    "union_each_stage_fraction": 1.0,
+    "front_navigation_fraction": 0.95,
+    "wrist_manipulation_fraction": 0.95,
+    "top_occlusion_during_grasp_expected": true
+  }
+}

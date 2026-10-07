@@ -1,154 +1,182 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="ARM_6DOF_REV6_GRIPPER_CAMERA">
 
-<mujoco model="robot2">
-  <compiler angle="radian"/>
-  <option timestep="0.002" wind="0 0 0" gravity="0 0 -9.81" integrator="implicitfast" density="1.225"/>
+  <compiler angle="radian" autolimits="true" />
+  <option timestep="0.002" wind="0 0 0" gravity="0 0 -9.81" integrator="implicitfast" density="1.225" />
+
   <visual>
-   
     <quality shadowsize="2048" />
-      <map znear="0.1" zfar="50"/> 
-  <rgba fog="0 1 0 1" haze=".2 .2 .2 0.3"/> <!-- 纯白天空 + 柔和雾霭 -->
-  </visual>
+    <map znear="0.01" zfar="50" />
+    <rgba fog="0 1 0 1" haze=".2 .2 .2 .3" />
+  <global offwidth="1280" offheight="720" /></visual>
+
   <asset>
-                <!-- 天空盒纹理：沙漠风景 -->
-        <texture type="skybox" file="../img/desert.png"
-            gridsize="3 4" gridlayout=".U..LFRB.D.." />
-                <!-- 四面体网格 -->
-        <mesh name="tetrahedron" vertex="0 0 0 1 0 0 0 1 0 0 0 1" />
-        <!-- 地面纹理：棋盘格，黑白相间 -->
-        <texture name="plane" type="2d" builtin="checker" rgb1=".1 .1 .1" rgb2=".9 .9 .9"
-            width="512" height="512" mark="cross" markrgb=".8 .8 .8" />
-        <!-- 地面材质 -->
-        <material name="plane" reflectance="0.3" texture="plane" texrepeat="1 1" texuniform="true" />
-        <!-- 绿色箱体材质 -->
-        <material name="box" rgba="0 0.5 0 1" emission="0" />
-    <mesh name="base_link" content_type="model/stl" file="../meshes/base_link.STL"/>
-    <mesh name="j1_Link" content_type="model/stl" file="../meshes/j1_Link.STL"/>
-    <mesh name="j2_Link" content_type="model/stl" file="../meshes/j2_Link.STL"/>
-    <mesh name="j3_Link" content_type="model/stl" file="../meshes/j3_Link.STL"/>
-    <mesh name="j4_Link" content_type="model/stl" file="../meshes/j4_Link.STL"/>
-    <mesh name="j5_Link" content_type="model/stl" file="../meshes/j5_Link.STL"/>
-    <mesh name="j6_Link" content_type="model/stl" file="../meshes/j6_Link.STL"/>
+
+    <texture type="skybox" file="../img/desert.png" gridsize="3 4" gridlayout=".U..LFRB.D.." />
+    <texture name="plane" type="2d" builtin="checker" rgb1=".1 .1 .1" rgb2=".9 .9 .9" width="512" height="512" mark="cross" markrgb=".8 .8 .8" />
+    <material name="plane" reflectance=".3" texture="plane" texrepeat="1 1" texuniform="true" />
+
+    <mesh name="base_link_mesh" file="../meshes/base_link.STL" />
+    <mesh name="j1_Link_mesh" file="../meshes/j1_Link.STL" />
+    <mesh name="j2_Link_mesh" file="../meshes/j2_Link.STL" />
+    <mesh name="j3_Link_mesh" file="../meshes/j3_Link.STL" />
+    <mesh name="j4_Link_mesh" file="../meshes/j4_Link.STL" />
+    <mesh name="j5_Link_mesh" file="../meshes/j5_Link.STL" />
+
+
+    <material name="gripper_fixed_gray" rgba=".68 .71 .76 1" />
+    <material name="gripper_left_blue" rgba=".18 .58 .9 1" />
+    <material name="gripper_right_green" rgba=".12 .72 .68 1" />
+    <material name="gripper_left_guide_orange" rgba="1 .18 .02 1" />
+    <material name="gripper_right_guide_magenta" rgba=".95 .05 .65 1" />
+    <material name="gripper_metal_gold" rgba=".76 .57 .18 1" />
+    <material name="j6_motor_boss_metal" rgba=".72 .74 .76 1" />
+    <material name="j6_shaft_black" rgba=".055 .055 .055 1" />
+    <material name="camera_black" rgba=".06 .065 .075 1" />
+
+    <mesh name="gripper_Motor_Driver_Module" file="../meshes/Motor_Driver_Module.stl" scale=".001 .001 .001" />
+    <mesh name="gripper_Wrist_Flange" file="../meshes/Wrist_Flange.stl" scale=".001 .001 .001" />
+    <mesh name="gripper_Quick_Latch" file="../meshes/Quick_Latch.stl" scale=".001 .001 .001" />
+    <mesh name="gripper_Gripper_Base" file="../meshes/Gripper_Base.stl" scale=".001 .001 .001" />
+    <mesh name="gripper_Pinion" file="../meshes/Pinion.stl" scale=".001 .001 .001" />
+    <mesh name="gripper_Replaceable_Hub_Insert" file="../meshes/Replaceable_Hub_Insert.stl" scale=".001 .001 .001" />
+    <mesh name="gripper_Left_Rack_Slider" file="../meshes/Left_Rack_Slider.stl" scale=".001 .001 .001" />
+    <mesh name="gripper_Left_Finger" file="../meshes/Left_Finger.stl" scale=".001 .001 .001" />
+    <mesh name="gripper_Right_Rack_Slider" file="../meshes/Right_Rack_Slider.stl" scale=".001 .001 .001" />
+    <mesh name="gripper_Right_Finger" file="../meshes/Right_Finger.stl" scale=".001 .001 .001" />
+    <mesh name="gripper_Pinion_Retainer" file="../meshes/Pinion_Retainer.stl" scale=".001 .001 .001" />
+    <mesh name="gripper_Motor_Mount_Frame" file="../meshes/Motor_Mount_Frame.stl" scale=".001 .001 .001" />
+    <mesh name="gripper_Left_Outer_C_Guide" file="../meshes/Left_Outer_Loose_C_Guide_Addon.stl" scale=".001 .001 .001" />
+    <mesh name="gripper_Right_Outer_C_Guide" file="../meshes/Right_Outer_Loose_C_Guide_Addon.stl" scale=".001 .001 .001" />
+
+    <mesh name="wrist_camera_mesh" file="../meshes/Camera_Fusion.stl" scale=".001 .001 .001" />
   </asset>
 
   <worldbody>
-    <!-- 地面 -->
-          <!-- 地面：无限大平面，3个接触维度 -->
-        <geom name="floor" pos="0 0 0" size="0 0 .25" type="plane" material="plane"
-            condim="3" />
-        <!-- 平行光 -->
-        <light directional="true" ambient=".3 .3 .3" pos="30 30 30" dir="0 -2 -1"
-            diffuse=".5 .5 .5" specular=".5 .5 .5" />
+    <geom name="floor" pos="0 0 0" size="0 0 .25" type="plane" material="plane" condim="3" />
+    <light directional="true" ambient=".3 .3 .3" pos="30 30 30" dir="0 -2 -1" diffuse=".5 .5 .5" specular=".5 .5 .5" />
+    <camera name="this_camera" pos="0 0 1.5" euler="0 0 0" fovy="45" />
 
-            <camera name="this_camera" pos="0 0 1.5" euler="0 0 0" fovy="45"/> <!-- 固定摄像机 -->
-      <body name="base_link" pos="0 0 0">
-    <geom type="mesh" rgba="1 1 1 1" mesh="base_link"/>
-    
-    <!-- j1_Link: quat="-3.67321e-06 0 0 1" → 无旋转 -->
-    <body name="j1_Link" pos="0.08 0.08 0.039" euler="0 0 3.14">
-      <inertial pos="-0.00368331 -0.0113205 0.112329" quat="0.989154 -0.00110874 0.0655151 0.131455" mass="0.427328" diaginertia="0.000224635 0.00022137 0.000123951"/>
-      <joint name="j1_joint" pos="0 0 0" axis="0 0 -1" range="-3.14 3.14" actuatorfrcrange="-20 20"/>
-      <geom type="mesh" rgba="0.14902 0.14902 0.14902 1" mesh="j1_Link"/>
-      
-      <!-- j2_Link: quat="0.707105 0.707108 0 0" → 绕Z轴+90° -->
-      <body name="j2_Link" pos="0 0.052981 0.153" euler="1.57 0 0">
-        <inertial pos="-0.075 0 0.00549028" quat="-6.79812e-05 0.707107 6.79812e-05 0.707107" mass="0.0496479" diaginertia="9.10862e-05 8.74226e-05 4.41999e-06"/>
-        <joint name="j2_joint" pos="0 0 0" axis="0 0 1" range="-3.14 0" actuatorfrcrange="-20 20"/>
-        <geom type="mesh" rgba="1 1 1 1" mesh="j2_Link"/>
-        
-        <!-- j3_Link: 无旋转 -->
-        <body name="j3_Link" pos="-0.15 0 0.018" euler="0 0 0">
-          <inertial pos="-0.0260794 0.0312427 0.0488675" quat="0.500214 0.500144 0.499864 0.499778" mass="0.398882" diaginertia="0.000137387 0.00013361 0.000114207"/>
-          <joint name="j3_joint" pos="0 0 0" axis="0 0 1" range="-3.14 3.14" actuatorfrcrange="-20 20"/>
-          <geom type="mesh" rgba="1 1 1 1" mesh="j3_Link"/>
-          
-          <!-- j4_Link: quat="-0.707105 0 -0.707108 0" → 绕Y轴-90°后再绕? 实际等效绕X轴180° -->
-          <body name="j4_Link" pos="0.009 0.059361 0.035" euler="3.1416 1.57 0">
-            <inertial pos="-0.00396142 -1.13151e-06 0.0774846" quat="0.510716 0.489054 0.48905 0.510711" mass="0.24806" diaginertia="9.87684e-05 8.58838e-05 7.82496e-05"/>
-            <joint name="j4_joint" pos="0 0 0" axis="0 0 -1" range="-3.14 3.14" actuatorfrcrange="-20 20"/>
-            <geom type="mesh" rgba="1 1 1 1" mesh="j4_Link"/>
-            
-            <!-- j5_Link: quat="0.707105 0 0.707108 0" → 绕Z轴+90° -->
-            <body name="j5_Link" pos="-0.05 0 0.104" euler="-1.57 1.57 -1.5708">
-              <inertial pos="0.0578983 2.75448e-07 0.033873" quat="0.621413 0.338418 0.339189 0.619895" mass="0.147033" diaginertia="0.000119812 0.000118284 3.98727e-05"/>
-              <joint name="j5_joint" pos="0 0 0" axis="0 0 -1" range="-1.57 1.57" actuatorfrcrange="-20 20"/>
-              <geom type="mesh" rgba="1 1 1 1" mesh="j5_Link"/>
-              
-              <!-- j6_Link: quat="-2.59734e-06 0.707105 2.59735e-06 0.707108" → 绕Y轴+90° -->
-<!-- j6_Link 部分修正 -->
-<body name="j6_Link" pos="0.1025 0 0.05" euler="0 -1.5708 0">
-    <inertial pos="-8.04121e-10 -2.94384e-08 0.0213303" 
-              quat="0.760162 0 0 0.649734" 
-              mass="0.0256026" 
-              diaginertia="4.38144e-05 4.09094e-05 5.82681e-06"/>
-    <joint name="j6_joint" pos="0 0 0" axis="0 0 -1" 
-           range="-3.14 3.14" actuatorfrcrange="-20 20"/>
-    <geom type="mesh" rgba="1 1 1 1" mesh="j6_Link"/>
-    
-    <!-- ✅ 修正：ee_center_body 作为 j6_Link 的子body -->
-    <body name="ee_center_body" pos="0 0 -0.03">
-        <!-- 可视化几何体（红色球体） -->
-        <geom name="ee_center_geom" 
-              type="sphere" 
-              size="0.02" 
-              rgba="1 0 0 0.8" 
-              contype="0" 
-              conaffinity="0" 
-              mass="0.001"/>
-        
-        <!-- 用于参考的site -->
-        <site name='ee_center_site' 
-              type="sphere" 
-              size="0.005" 
-              rgba="0 1 0 1"/>
-    </body>
-</body>
-<!-- j6_Link 结束 -->
+    <camera name="front_rgb" pos="0.3665 0.028999999999999998 0.355" quat="0.803690166 0.42973988 0.194077538 0.362959587" fovy="48" /><body name="measured_robot_mount" pos=".08 .08 0" quat=".7071067811865476 0 0 -.7071067811865476"><body name="base_link" pos="-.08 -.08 0">
+      <geom type="mesh" rgba="1 1 1 1" mesh="base_link_mesh" />
+
+      <body name="j1_Link" pos=".08 .08 .039" euler="0 0 3.14">
+        <inertial pos="-.00368331 -.0113205 .112329" quat=".989154 -.00110874 .0655151 .131455" mass=".427328" diaginertia=".000224635 .00022137 .000123951" />
+        <joint name="j1_joint" axis="0 0 -1" range="-3.14 3.14" actuatorfrcrange="-20 20" />
+        <geom type="mesh" rgba=".14902 .14902 .14902 1" mesh="j1_Link_mesh" />
+
+        <body name="j2_Link" pos="0 .052981 .153" euler="1.57 0 0">
+          <inertial pos="-.075 0 .00549028" quat="-.0000679812 .707107 .0000679812 .707107" mass=".0496479" diaginertia=".0000910862 .0000874226 .00000441999" />
+          <joint name="j2_joint" axis="0 0 1" range="-3.14 0" actuatorfrcrange="-20 20" />
+          <geom type="mesh" rgba="1 1 1 1" mesh="j2_Link_mesh" />
+
+          <body name="j3_Link" pos="-.15 0 .018">
+            <inertial pos="-.0260794 .0312427 .0488675" quat=".500214 .500144 .499864 .499778" mass=".398882" diaginertia=".000137387 .00013361 .000114207" />
+            <joint name="j3_joint" axis="0 0 1" range="-3.14 3.14" actuatorfrcrange="-20 20" />
+            <geom type="mesh" rgba="1 1 1 1" mesh="j3_Link_mesh" />
+
+            <body name="j4_Link" pos=".009 .059361 .035" euler="3.1416 1.57 0">
+              <inertial pos="-.00396142 -.00000113151 .0774846" quat=".510716 .489054 .48905 .510711" mass=".24806" diaginertia=".0000987684 .0000858838 .0000782496" />
+              <joint name="j4_joint" axis="0 0 -1" range="-3.14 3.14" actuatorfrcrange="-20 20" />
+              <geom type="mesh" rgba="1 1 1 1" mesh="j4_Link_mesh" />
+
+              <body name="j5_Link" pos="-.05 0 .104" euler="-1.57 1.57 -1.5708">
+                <inertial pos=".0578983 .000000275448 .033873" quat=".621413 .338418 .339189 .619895" mass=".147033" diaginertia=".000119812 .000118284 .0000398727" />
+                <joint name="j5_joint" axis="0 0 -1" range="-1.57 1.57" actuatorfrcrange="-20 20" />
+                <geom type="mesh" rgba="1 1 1 1" mesh="j5_Link_mesh" />
+
+                <body name="j6_Link" pos=".1025 0 .05" euler="0 -1.5708 0">
+                  <joint name="j6_joint" axis="0 0 -1" range="-3.14 3.14" actuatorfrcrange="-20 20" />
+
+                  <geom name="j6_motor_pilot_boss" type="cylinder" pos="0 0 -.001" size=".011 .001" material="j6_motor_boss_metal" contype="0" conaffinity="0" group="2" density="0" />
+                  <geom name="j6_exposed_d_shaft" type="cylinder" pos="0 0 -.003" size=".004 .001" material="j6_shaft_black" contype="0" conaffinity="0" group="2" density="0" />
+
+
+                  <body name="gripper_base" pos="0 0 -.0465" euler="3.141592653589793 0 0">
+                    <inertial pos="0 .001 -.0035" mass=".141495" diaginertia=".00012913777 .000273981485 .000194744285" />
+
+
+                    <site name="gripper_mount" pos="0 0 -.0505" size=".002" rgba="1 .2 .2 1" />
+                    <geom name="visual_Motor_Driver_Module" type="mesh" mesh="gripper_Motor_Driver_Module" material="gripper_fixed_gray" contype="0" conaffinity="0" group="2" density="0" />
+                    <geom name="visual_Wrist_Flange" type="mesh" mesh="gripper_Wrist_Flange" material="gripper_fixed_gray" contype="0" conaffinity="0" group="2" density="0" />
+                    <geom name="visual_Quick_Latch" type="mesh" mesh="gripper_Quick_Latch" material="gripper_fixed_gray" contype="0" conaffinity="0" group="2" density="0" />
+                    <geom name="visual_Gripper_Base" type="mesh" mesh="gripper_Gripper_Base" material="gripper_fixed_gray" contype="0" conaffinity="0" group="2" density="0" />
+                    <geom name="visual_Pinion" type="mesh" mesh="gripper_Pinion" material="gripper_metal_gold" contype="0" conaffinity="0" group="2" density="0" />
+                    <geom name="visual_Replaceable_Hub_Insert" type="mesh" mesh="gripper_Replaceable_Hub_Insert" material="gripper_metal_gold" contype="0" conaffinity="0" group="2" density="0" />
+                    <geom name="visual_Pinion_Retainer" type="mesh" mesh="gripper_Pinion_Retainer" material="gripper_metal_gold" contype="0" conaffinity="0" group="2" density="0" />
+                    <geom name="visual_Motor_Mount_Frame" type="mesh" mesh="gripper_Motor_Mount_Frame" material="gripper_fixed_gray" contype="0" conaffinity="0" group="2" density="0" />
+
+
+                    <body name="wrist_camera_body" pos=".018 -.068636332678 .005" quat="0 0 .138374145504 .990380025978">
+                      <geom name="wrist_camera_visual" type="mesh" mesh="wrist_camera_mesh" material="camera_black" mass=".04575" contype="0" conaffinity="0" group="2" />
+                      <geom name="wrist_camera_housing_collision" type="box" pos=".018 -.018 .0055" size=".018 .018 .0055" density="0" group="3" />
+                      <geom name="wrist_camera_lens_collision" type="cylinder" pos=".018 -.018 .0225" size=".00775 .0095" density="0" group="3" />
+
+                      <camera name="wrist_camera" pos=".018 -.018 .032" quat="0 0 1 0" fovy="45.2" />
+                    </body>
+
+
+                    <body name="ee_center_body" pos="0 0 .0697">
+                      <site name="ee_center_site" type="sphere" size=".004" rgba="0 1 0 1" />
+                    </body>
+
+                    <body name="left_gripper_group">
+                      <joint name="left_slide" type="slide" axis="1 0 0" range="-.04 0" damping="2" armature=".001" />
+                      <inertial pos=".018 .00775 .0597499981" mass=".01303" diaginertia=".00000580210667 .00000945457854 .00000638931479" />
+                      <geom name="visual_Left_Rack_Slider" type="mesh" mesh="gripper_Left_Rack_Slider" material="gripper_left_blue" contype="0" conaffinity="0" group="2" density="0" />
+                      <geom name="visual_Left_Finger" type="mesh" mesh="gripper_Left_Finger" material="gripper_left_blue" contype="0" conaffinity="0" group="2" density="0" />
+                      <geom name="visual_Left_Outer_C_Guide" type="mesh" mesh="gripper_Left_Outer_C_Guide" material="gripper_left_guide_orange" contype="0" conaffinity="0" group="2" density="0" />
+                      <geom name="left_finger_collision" type="box" pos="-.008 .005 .0696999989" size=".008 .015 .0219999981" rgba=".15 .55 .95 .18" friction=".8 .005 .0001" contype="1" conaffinity="1" group="3" density="0" />
+                    </body>
+
+                    <body name="right_gripper_group">
+                      <joint name="right_slide" type="slide" axis="1 0 0" range="0 .04" damping="2" armature=".001" />
+                      <inertial pos="-.018 -.00775 .0597499981" mass=".01324" diaginertia=".00000589561721 .00000960695471 .00000649228917" />
+                      <geom name="visual_Right_Rack_Slider" type="mesh" mesh="gripper_Right_Rack_Slider" material="gripper_right_green" contype="0" conaffinity="0" group="2" density="0" />
+                      <geom name="visual_Right_Finger" type="mesh" mesh="gripper_Right_Finger" material="gripper_right_green" contype="0" conaffinity="0" group="2" density="0" />
+                      <geom name="visual_Right_Outer_C_Guide" type="mesh" mesh="gripper_Right_Outer_C_Guide" material="gripper_right_guide_magenta" contype="0" conaffinity="0" group="2" density="0" />
+                      <geom name="right_finger_collision" type="box" pos=".008 -.005 .0696999989" size=".008 .015 .0219999981" rgba=".1 .75 .7 .18" friction=".8 .005 .0001" contype="1" conaffinity="1" group="3" density="0" />
+                    </body>
+                  </body>
+                </body>
+              </body>
             </body>
           </body>
         </body>
       </body>
     </body>
-    </body>
-  </worldbody>
+  </body><geom name="measured_board_visual" type="box" pos="0.08000000000000002 0.2815 -0.004" size=".2965 .2825 .005" rgba=".78 .75 .68 1" contype="0" conaffinity="0" /><geom name="board_edge_left" type="capsule" fromto="-0.21649999999999997 -0.0010000000000000009 0.002 -0.21649999999999997 0.564 0.002" size=".0015" rgba=".1 .55 .8 1" contype="0" conaffinity="0" /><geom name="board_edge_right" type="capsule" fromto="0.3765 -0.0010000000000000009 0.002 0.3765 0.564 0.002" size=".0015" rgba=".1 .55 .8 1" contype="0" conaffinity="0" /><geom name="board_edge_near" type="capsule" fromto="-0.21649999999999997 -0.0010000000000000009 0.002 0.3765 -0.0010000000000000009 0.002" size=".0015" rgba=".1 .55 .8 1" contype="0" conaffinity="0" /><geom name="board_edge_far" type="capsule" fromto="-0.21649999999999997 0.564 0.002 0.3765 0.564 0.002" size=".0015" rgba=".1 .55 .8 1" contype="0" conaffinity="0" /></worldbody>
 
-  <!-- ========== 位置控制器配置 ========== -->
+  <contact>
+    <exclude body1="left_gripper_group" body2="right_gripper_group" />
+  </contact>
+
+  <tendon>
+    <fixed name="gripper_opening">
+      <joint joint="left_slide" coef="-1" />
+      <joint joint="right_slide" coef="1" />
+    </fixed>
+  </tendon>
+
+  <equality>
+    <joint name="one_logical_gripper_dof" joint1="left_slide" joint2="right_slide" polycoef="0 -1 0 0 0" solref=".002 1" />
+  </equality>
+
   <actuator>
-    <!-- j1 位置控制器 -->
-    <position name="j1_ctrl" joint="j1_joint" 
-              kp="100" kv="10" 
-              ctrlrange="-3.14 3.14" 
-              forcerange="-20 20"/>
-    
-    <!-- j2 位置控制器 -->
-    <position name="j2_ctrl" joint="j2_joint" 
-              kp="100" kv="10" 
-              ctrlrange="-3.14 0" 
-              forcerange="-20 20"/>
-    
-    <!-- j3 位置控制器 -->
-    <position name="j3_ctrl" joint="j3_joint" 
-              kp="100" kv="10" 
-              ctrlrange="-3.14 3.14" 
-              forcerange="-20 20"/>
-    
-    <!-- j4 位置控制器 -->
-    <position name="j4_ctrl" joint="j4_joint" 
-              kp="100" kv="10" 
-              ctrlrange="-3.14 3.14" 
-              forcerange="-20 20"/>
-    
-    <!-- j5 位置控制器 -->
-    <position name="j5_ctrl" joint="j5_joint" 
-              kp="100" kv="10" 
-              ctrlrange="-2.2 2.2" 
-              forcerange="-20 20"/>
-    
-    <!-- j6 位置控制器 -->
-    <position name="j6_ctrl" joint="j6_joint" 
-              kp="100" kv="10" 
-              ctrlrange="-3.14 3.14" 
-              forcerange="-20 20"/>
+
+    <position name="j1_ctrl" joint="j1_joint" kp="100" kv="10" ctrlrange="-3.14 3.14" forcerange="-20 20" />
+    <position name="j2_ctrl" joint="j2_joint" kp="100" kv="10" ctrlrange="-3.14 0" forcerange="-20 20" />
+    <position name="j3_ctrl" joint="j3_joint" kp="100" kv="10" ctrlrange="-3.14 3.14" forcerange="-20 20" />
+    <position name="j4_ctrl" joint="j4_joint" kp="100" kv="10" ctrlrange="-3.14 3.14" forcerange="-20 20" />
+    <position name="j5_ctrl" joint="j5_joint" kp="100" kv="10" ctrlrange="-2.2 2.2" forcerange="-20 20" />
+    <position name="j6_ctrl" joint="j6_joint" kp="100" kv="10" ctrlrange="-3.14 3.14" forcerange="-20 20" />
+
+    <position name="g" tendon="gripper_opening" kp="200" kv="5" ctrlrange="0 .08" forcerange="-10 10" />
   </actuator>
 
-
+  <keyframe>
+    <key name="home_closed" qpos="0 0 0 0 0 0 0 0" ctrl="0 0 0 0 0 0 0" />
+    <key name="home_half_open" qpos="0 0 0 0 0 0 -.02 .02" ctrl="0 0 0 0 0 0 .04" />
+    <key name="home_fully_open" qpos="0 0 0 0 0 0 -.04 .04" ctrl="0 0 0 0 0 0 .08" />
+  </keyframe>
 </mujoco>

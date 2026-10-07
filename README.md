@@ -1,6 +1,6 @@
 # twist001 · 六轴机械臂与自然语言协作系统
 
-面向机械臂建模、控制与人机协作的研究原型，包含机械结构设计、MuJoCo 仿真、PPO 强化学习、ROS 2 控制、STM32 下位机，以及本地语音与视觉助手源码。
+面向机械臂建模、控制与人机协作的研究原型，包含机械结构设计、MuJoCo 双相机仿真、三模型训练归档、ROS 2 控制、STM32 下位机，以及本地语音与视觉助手源码。
 
 仓库由两部分组成：**`model/` 提供机械设计与独立仿真实验，`arm/` 提供控制器、感知和交互系统**。
 
@@ -9,11 +9,11 @@
 | 模块 | 内容 | 代码与资料 |
 | --- | --- | --- |
 | 机械结构 | 六轴机械臂零件、装配体、加工模型、打印工程和材料清单 | [model/3D](model/3D/)、[材料清单](model/机械臂材料清单.xlsx) |
-| 仿真与学习 | URDF / MJCF 模型、MuJoCo 演示、Gymnasium 环境与 PPO 训练 | [model/RL/src](model/RL/src/) |
+| 仿真与学习 | REV6 MJCF、完整夹爪、双相机渲染与任务场景 | [model/RL/src](model/RL/src/) |
 | 运动控制 | 逆运动学、关节目标控制、串口状态反馈和手眼标定 | [arm/ROS2/src/control](arm/ROS2/src/control/)、[main](arm/ROS2/src/main/) |
 | 视觉与停机处理 | RGB-D 距离估计、视觉快照、多来源急停聚合 | [arm/ROS2/src/camera](arm/ROS2/src/camera/) |
 | 本地 AI 交互 | OpenVINO 模型适配、Whisper 语音识别、语音合成、规则确认和 Web 界面 | [arm/safe](arm/safe/)、[arm/code](arm/code/) |
-| 嵌入式控制 | STM32F407 固件、CAN 电机通信、气泵与 OLED 控制、PCB 工程 | [arm/STM32](arm/STM32/) |
+| 嵌入式控制 | STM32F407 六轴 CAN 与 ESP32 夹爪配套固件、Wi-Fi/BLE 夹爪接口 | [STM32](arm/STM32/)、[ESP32](arm/ESP32/) |
 
 当前发布包含源码和设计资料；模型权重、训练策略、运行环境及部分外部资源需要单独准备。目录适配情况见下方「当前集成说明」。
 
@@ -40,7 +40,7 @@ flowchart TD
     MCU --> Motor[六轴电机与末端执行器]
     ROS --> Sim[MuJoCo 仿真]
     CAD[机械设计 / URDF / MJCF] --> Sim
-    CAD --> RL[Gymnasium + PPO 独立训练]
+    CAD --> RL[三模型训练历史归档]
 ```
 
 ## 目录结构
@@ -60,71 +60,35 @@ twist001/
 │   │       ├── control/      # IK、DRL 与手眼标定
 │   │       ├── main/         # 启动文件、状态机与急停聚合
 │   │       └── mujoco_sim/   # ROS 2 / MuJoCo 仿真节点
-│   ├── STM32/               # 固件、原理图与立创 EDA 工程
+│   ├── STM32/               # FinalIntegration 六轴固件、历史 PCB
+│   ├── ESP32/               # 配套夹爪固件、私有配置生成工具
 │   └── scripts/             # Web 与 ROS 2 启动辅助脚本
 └── model/
     ├── 3D/
     │   ├── sw/              # SolidWorks 零件与装配体
     │   └── 加工/             # CNC / 打印用 STEP 与 3MF 文件
-    ├── RL/src/              # 独立仿真、训练与测试代码
-    │   ├── arm.py
+    ├── RL/src/              # REV6 独立仿真与相机检查
     │   ├── demo.py
-    │   └── model/           # MJCF、URDF、STL 与纹理
+    │   └── model/           # REV6 MJCF、STL 与纹理
     └── 机械臂材料清单.xlsx
 ```
 
-## 快速开始：独立仿真
+## 快速开始：REV6 双相机仿真
 
-建议先从 `model/` 的独立仿真入口了解机械臂模型。以下命令以具有桌面显示环境的 Linux 主机为例，无需启动 ROS 2 或连接实体机械臂。
-
-### 1. 获取代码并建立环境
+仿真已更新为 REV6 机械臂、完整夹爪及最新相机对齐版本。前置视角 48°、腕部视角 45.2°；保留完整 16:9 视野，分别补边至 256×256 与 512×512。
 
 ```bash
-git clone https://github.com/luolisen/twist001.git
-cd twist001
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install mujoco numpy
+python -m pip install -r model/RL/requirements.txt
+python model/RL/src/demo.py
+python model/RL/src/demo.py --scene task
+python model/RL/src/demo.py --check /tmp/rev6-camera-check
 ```
 
-### 2. 打开 MuJoCo 演示
-
-```bash
-cd model/RL/src
-python demo.py
-```
-
-脚本使用相对于当前工作目录的模型路径，因此需要在 `model/RL/src/` 内运行。演示打开 MuJoCo 查看器并运行约 5 分钟；默认未启用随机关节控制。
-
-### 3. PPO 训练与测试
-
-在同一虚拟环境中补充训练依赖：
-
-```bash
-python -m pip install scipy gymnasium "stable-baselines3[extra]" torch
-```
-
-训练入口为 [`model/RL/src/arm.py`](model/RL/src/arm.py)。直接执行该文件会使用底部的配置：
-
-| 参数 | 当前入口默认值 | 用途 |
-| --- | --- | --- |
-| `TRAIN_MODE` | `True` | 训练；改为 `False` 后加载策略进行测试 |
-| `MODEL_PATH` | `./model_set` | 策略保存或加载路径 |
-| `n_envs` | `64` | 并行环境数 |
-| `total_timesteps` | `100_000_000` | 训练总步数 |
-
-首次运行请先降低并行数和训练步数，例如将入口中的 `n_envs` 改为 `4`、`total_timesteps` 改为 `100_000`，再在 `model/RL/src/` 下执行：
-
-```bash
-python arm.py
-```
-
-训练代码使用 `fork` 创建子进程，原生 Windows 需要调整启动方式。代码按 CUDA 可用性选择 GPU 或 CPU；中断训练时会尝试保存带 `_interrupted` 后缀的策略。测试前需准备已训练的策略文件。
-
-环境接口、奖励与模型说明见 [model/README.md](model/README.md)。
+macOS 交互窗口使用 `mjpython model/RL/src/demo.py`。完整说明见 [REV6 仿真](model/RL/README.md)。旧 PPO 入口已移除，三模型训练历史归档保留。模型和图像加载烟测不等于策略、碰撞或实机验收。
 
 ## ROS 2 与实体控制
+
+ROS 2 的 MuJoCo 资源副本同步更新为 REV6。旧 URDF 和六关节控制话题仍保留，夹爪与双相机话题尚未接入；未进行 ROS 2 构建或整链路验收。
 
 ROS 2 工作空间位于 **`arm/ROS2/`**。现有文档以 ROS 2 Jazzy 为基线；配置好 ROS 2、`colcon` 和各包依赖后，可从仓库根目录构建：
 
@@ -144,7 +108,7 @@ source install/setup.bash
 
 运行前需核对启动文件中的本机路径和资源配置。DRL 节点需要额外提供 `policy.zip`；相机节点需要匹配的 SDK 与视觉模型。接口和节点说明见 [ROS 2 文档](arm/ROS2/readme.md)。
 
-STM32 固件的 Keil 工程位于 [`arm/STM32/Control_Code/MDK-ARM/test.uvprojx`](arm/STM32/Control_Code/MDK-ARM/test.uvprojx)，CubeMX 配置位于 [`test.ioc`](arm/STM32/Control_Code/test.ioc)。电路、协议与固件说明见 [STM32 文档](arm/STM32/README.md)。
+STM32 与 ESP32 更新为配套 FinalIntegration v3.0 源码。STM32F407VG 构建入口为 `arm/STM32/Control_Code/CMakeLists.txt`，ESP32 使用 `huge_app` 分区。构建、配置及未完成的实机验证见 [STM32 文档](arm/STM32/README.md)、[ESP32 文档](arm/ESP32/README.md) 和 [联合验证](arm/firmware_tools/verification.md)。此次不提供原设备密钥或固件二进制。
 
 ## 当前集成说明
 

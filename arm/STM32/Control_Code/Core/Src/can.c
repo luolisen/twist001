@@ -19,6 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "can.h"
+#include "grip_can.h"
 
 /* USER CODE BEGIN 0 */
 
@@ -44,7 +45,7 @@ void MX_CAN2_Init(void)
   hcan2.Init.TimeTriggeredMode = DISABLE;
   hcan2.Init.AutoBusOff = DISABLE;
   hcan2.Init.AutoWakeUp = DISABLE;
-  hcan2.Init.AutoRetransmission = ENABLE;
+  hcan2.Init.AutoRetransmission = DISABLE;
   hcan2.Init.ReceiveFifoLocked = DISABLE;
   hcan2.Init.TransmitFifoPriority = DISABLE;
   if (HAL_CAN_Init(&hcan2) != HAL_OK)
@@ -53,8 +54,8 @@ void MX_CAN2_Init(void)
   }
   /* USER CODE BEGIN CAN2_Init 2 */
   /* ---- CAN2过滤器配置: 接收所有ID(FIFO0) ---- */
-  CAN_FilterTypeDef sFilterConfig;
-  sFilterConfig.FilterBank =0;
+  CAN_FilterTypeDef sFilterConfig = {0};
+  sFilterConfig.FilterBank =15;
   sFilterConfig.FilterMode = CAN_FILTERMODE_IDMASK;
   sFilterConfig.FilterScale = CAN_FILTERSCALE_32BIT;
   sFilterConfig.FilterIdHigh = 0x0000;
@@ -63,11 +64,20 @@ void MX_CAN2_Init(void)
   sFilterConfig.FilterMaskIdLow = 0x0000;
   sFilterConfig.FilterFIFOAssignment = CAN_FILTER_FIFO0;
   sFilterConfig.FilterActivation = CAN_FILTER_ENABLE;
-  sFilterConfig.SlaveStartFilterBank = 0;
+  sFilterConfig.SlaveStartFilterBank = 14;
   if (HAL_CAN_ConfigFilter(&hcan2, &sFilterConfig) != HAL_OK)
   {
     Error_Handler();
   }
+
+  /* Higher priority exact range routes gripper fragments to FIFO1. */
+  sFilterConfig.FilterBank = 14;
+  sFilterConfig.FilterIdHigh = (GC_REQUEST_ID << 3) >> 16;
+  sFilterConfig.FilterIdLow = ((GC_REQUEST_ID << 3) | 4U) & 0xffffU;
+  sFilterConfig.FilterMaskIdHigh = (0x1fffff00UL << 3) >> 16;
+  sFilterConfig.FilterMaskIdLow = ((0x1fffff00UL << 3) | 6U) & 0xffffU;
+  sFilterConfig.FilterFIFOAssignment = CAN_FILTER_FIFO1;
+  if (HAL_CAN_ConfigFilter(&hcan2, &sFilterConfig) != HAL_OK) Error_Handler();
 
   /* 启动CAN2外设 */
   if (HAL_CAN_Start(&hcan2) != HAL_OK)
@@ -76,7 +86,7 @@ void MX_CAN2_Init(void)
   }
 
   /* 使能FIFO0消息挂起中断, 接收回调中组装协议帧 */
-  __HAL_CAN_ENABLE_IT(&hcan2, CAN_IT_RX_FIFO0_MSG_PENDING);
+  /* FIFO0 is drained in the main loop, without interrupt callbacks. */
   /* USER CODE END CAN2_Init 2 */
 
 }
@@ -107,8 +117,8 @@ void HAL_CAN_MspInit(CAN_HandleTypeDef* canHandle)
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
     /* CAN2 interrupt Init */
-    HAL_NVIC_SetPriority(CAN2_RX0_IRQn, 0, 0);
-    HAL_NVIC_EnableIRQ(CAN2_RX0_IRQn);
+    /* Receive polling: no CAN2 RX interrupt. */
+
   /* USER CODE BEGIN CAN2_MspInit 1 */
 
   /* USER CODE END CAN2_MspInit 1 */

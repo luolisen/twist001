@@ -78,12 +78,17 @@ class MujocoJointPublisher(Node):
         # 加载MuJoCo模型
         self.model = mujoco.MjModel.from_xml_path(xml_path)
         self.data = mujoco.MjData(self.model)
-        self.action_prev = np.zeros(6, dtype=np.float32)
+        # Match the REV6 camera scene's simulation-only initial pose.
+        initial_joints = np.array([0.0, -0.05, 0.1, 0.0, 0.0, 0.0])
+        self.data.qpos[:6] = initial_joints
+        self.data.ctrl[:6] = initial_joints
+        mujoco.mj_forward(self.model, self.data)
+        self.action_prev = initial_joints.astype(np.float32)
         # 启动 mujoco viewer
 
         self.viewer = None
-        self.target_ctrl = np.zeros(6, dtype=np.float64)
-        self.commanded_ctrl = np.zeros(6, dtype=np.float64)
+        self.target_ctrl = initial_joints.copy()
+        self.commanded_ctrl = initial_joints.copy()
         self.joint_names = JOINT_NAMES
         self.handeye_active = False
         self.declare_parameter('max_joint_speed', DEFAULT_MAX_JOINT_SPEED)
