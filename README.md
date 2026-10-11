@@ -2,7 +2,7 @@
 
 围绕自建六轴机械臂、双指夹爪和双相机开展建模、控制与具身智能实验。当前仓库以 **STM32 六轴固件、ESP32 夹爪固件、REV6 双相机 MuJoCo 仿真**为基础，保留三模型训练归档及机械设计资料。
 
-本页按 2026-10-08 已核实的本地工程与仓库发布内容整理。源码构建、仿真烟测、模型评估和实机验证分别记录，不将它们视为同一项验收。
+本页更新至2026-10-10：固件与相机发布沿用2026-10-08记录，补入三模型阶段监督及v2技能研究结果。源码构建、仿真烟测、模型评估和实机验证分别记录，不将它们视为同一项验收。
 
 ## 当前模块
 
@@ -11,27 +11,31 @@
 | STM32 六轴控制 | FinalIntegration v3.0，STM32F407VG，X42S CAN、示教/回放、夹爪链路 | 重新编译通过；[构建说明](arm/STM32/README.md) |
 | ESP32 夹爪控制 | 配套纯 P 控制、端点减速、反向制动、CAN 节点 7、Wi-Fi/BLE 夹爪接口 | 重新编译通过；[配置与构建](arm/ESP32/README.md) |
 | REV6 仿真 | 六轴机械臂、完整夹爪、前置与腕部相机、基础及方块任务场景 | 加载、渲染及短步数数值检查通过；[使用说明](model/RL/README.md) |
-| 三模型训练归档 | VLA → WM → Jev 方向及 WM19 训练、核验、独立评分记录 | 归档的物理可靠性门槛未通过；[实验记录](model/three_model_training/README.md) |
+| 三模型与技能研究 | v1阶段监督、WM-FK、v2 Skill Router与Transport重力前馈 | 已知场景拿起保持、局部跟踪通过；完整搬运/放置未通过；[实验记录](model/three_model_training/README.md) |
 | ROS 2 | 既有节点及已同步的 REV6 MuJoCo 资源 | 当前更新未进行 ROS 2 整链路验收；[集成边界](arm/README.md) |
 | 机械资料 | SolidWorks、STEP、打印工程、材料清单及 PCB 资料 | 历史资料，尚未逐项核对与 REV6 的一致性；[机械资料说明](model/README.md) |
 
 ## 架构方向与集成状态
 
-三模型按不同职责协作：**SmolVLA 提出动作候选，World Model 预测候选动作的物理后果，Jev 结合任务目标选择、拒绝或重新规划**。方向说明及实现边界见[三模型归档](model/three_model_training/README.md)。这不是已经完成的端到端三模型闭环系统。
+当前仿真架构采用**VLA阶段内连续生成动作、WM预测准备执行动作的后果、Jev发放有限且可撤销的阶段许可**。复合抓取抬升阶段覆盖夹爪接续及正常控制交还；每块持续检查公开输入、控制权和原物理保护。Jev拒绝、超时或无效返回不默认放行。
 
-计划中的执行关系如下；虚线表示尚待统一接入或验证的环节：
+2026-10-10，同一次在线仿真完整执行34块/10880步，在10.880秒完成拿起保持；8.320秒原评价仍失败。完整物理轨迹与VLA加辅助成功基线一致，因此证明阶段监督保住了已知场景能力，尚未证明WM/Jev提升成功率、安全性或泛化。详见[实际结果与源码](model/three_model_training/experiments/skill_supervision_20261010/README.md)。
+
+v2已实现Pick/Hold/Transport/Place/Recovery技能接口，局部固定结构重力前馈使末端跟踪误差由3.202mm降至0.196mm。最新长路径只取得70mm静态合法前缀，尚未物理执行；公开持物确认、自动Transport交接、Place松爪与完整抓放仍未通过。
 
 ```mermaid
 flowchart TD
-    Task[任务目标] -.-> Jev[Jev：任务组织与候选选择]
-    Obs[双相机图像与公开状态] -.-> VLA[SmolVLA：动作候选]
-    Obs -.-> WM[World Model：物理后果预测]
-    VLA -.-> WM
-    WM -.-> Jev
-    Jev -.-> Gate[统一执行网关：标定、限位、时效与使能检查]
-    Gate -.-> Sim[REV6 MuJoCo 仿真]
-    Gate -.-> STM[STM32：六轴控制与夹爪 CAN 链路]
-    STM -.-> ESP[ESP32：夹爪控制]
+    Task[任务目标] --> Jev[Jev：阶段许可、拒绝与重规划]
+    Obs[公开双相机、编码器与回执] --> VLA[SmolVLA：阶段内连续动作]
+    Obs --> WM[World Model：未来响应与风险]
+    VLA --> WM
+    WM --> Jev
+    Jev --> Gate[有限许可与控制所有权]
+    VLA --> Gate
+    Gate --> Protect[原限位、物理保护与执行回执]
+    Protect --> Sim[已知MuJoCo场景拿起保持通过]
+    Gate -. 技能交接仍待验证 .-> Skills[v2 Transport / Place]
+    Protect -. 尚未联合验收 .-> STM[STM32六轴与ESP32夹爪]
 ```
 
 本地 FinalIntegration 工程另有 `host/alan_robot` 主机控制层与独立 ROS 桥接包，**尚未纳入本仓库此次发布**。仓库中的既有 ROS 2 节点不能直接等同于这套新执行层。固件源码中已有配套 CAN 协议；新固件尚未烧录或完成实机联合验证。
@@ -106,9 +110,9 @@ arduino-cli compile --fqbn esp32:esp32:esp32doit-devkit-v1 \
 - REV6 基础及任务场景在 MuJoCo 3.13.0 下通过加载、双相机渲染与各 100 步数值烟测。
 - ROS MuJoCo 资源一致性及单项模型契约检查通过；未进行当前 ROS 工作空间的构建或运行验收。
 
-可核对的记录见 [联合验证](arm/firmware_tools/verification.md) 和 [固件源码指纹](arm/firmware_tools/source_manifest.json)。这些检查不证明抓取、放置、碰撞或三模型任务成功率。仓库中的 WM19 记录是历史训练归档，不代表本地后续实验的最新状态。
+可核对的记录见 [联合验证](arm/firmware_tools/verification.md) 和 [固件源码指纹](arm/firmware_tools/source_manifest.json)。这些固件与渲染检查不证明抓取、放置、碰撞或三模型任务成功率。WM19仍保留历史失败门槛；最新三模型闭环和局部控制结果单独归档，不追溯改写旧结果。
 
-新固件烧录、六轴方向/传动比/参考位与限位标定、无线实机通信、相机校准、完整模型闭环仍需分别完成。真实夹爪最大行程为 **74.63 mm**，仿真为 **80 mm**，模型动作接入时必须显式处理量程差异。
+新固件烧录、六轴方向/传动比/参考位与限位标定、无线实机通信、相机校准、跨场景可靠性、完整抓放和实机模型闭环仍需分别完成。真实夹爪最大行程为 **74.63 mm**，仿真为 **80 mm**，模型动作接入时必须显式处理量程差异。
 
 ## 主要目录
 
@@ -124,7 +128,7 @@ twist001/
 │   └── ROS2/src/                # 既有 ROS 节点与 REV6 MuJoCo 资源
 └── model/
     ├── RL/                      # REV6 场景、网格、渲染与相机合同
-    ├── three_model_training/    # 已发布的三模型方向及 WM19 归档
+    ├── three_model_training/    # 三模型阶段监督、v2技能研究及WM19历史
     ├── 3D/                      # 历史机械设计与加工资料
     └── 机械臂材料清单.xlsx
 ```

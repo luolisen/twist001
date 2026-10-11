@@ -1,0 +1,30 @@
+{
+  "full_rotation_constraint_online_changed": false,
+  "original_rotation_tolerance_rad": 0.05,
+  "expert_stage_rotation_ranges_rad": {
+    "move": [
+      0.020534843580670294,
+      0.024930652003700402
+    ],
+    "center_above_cell": [
+      0.020479595452423276,
+      0.02108000886837954
+    ],
+    "place": [
+      0.02050594791509005,
+      0.0210971844329365
+    ],
+    "release": [
+      0.020513450545875757,
+      0.020542557469699494
+    ],
+    "withdraw": [
+      0.01965612790638214,
+      0.02061628808135854
+    ]
+  },
+  "interpretation": "all examined expert full-orientation differences are below original .05rad; they do not establish need or permission for arbitrary tool-axis rotation",
+  "tool_axis_only_scheme": "geometry-only offline proposal; not solved or deployed; grasp torque/friction/load stability and release placement are unverified",
+  "lower_expert_EE_height_m": 0.05219809011115338,
+  "lower_height_not_approved_transit": "held offset unknown; broad conservative envelope would approach/cross support plane, so expert EE height is not copied into local physical goal"
+}

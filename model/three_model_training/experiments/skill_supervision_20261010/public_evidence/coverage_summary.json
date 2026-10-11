@@ -1,0 +1,101 @@
+{
+  "scope": "read_only_saved_evidence_audit",
+  "physical_steps": 0,
+  "model_calls": {
+    "VLA": 0,
+    "WM": 0,
+    "Jev": 0
+  },
+  "summary_by_run": {
+    "v1_success": {
+      "public_captures": 307,
+      "unique_public_timestamps": 273,
+      "time_range_s": [
+        0.0,
+        10.87999999999941
+      ],
+      "actual_association_conflict_captures": 0,
+      "both_cameras_reconfirmed": 274,
+      "evaluation_samples": 306,
+      "strict_carry_samples": 146,
+      "non_strict_carry_samples": 160,
+      "meaning": "correlated captures within one archived run; not independent tasks"
+    },
+    "handoff_wait": {
+      "public_captures": 208,
+      "unique_public_timestamps": 185,
+      "time_range_s": [
+        0.0,
+        7.360000000000793
+      ],
+      "actual_association_conflict_captures": 0,
+      "both_cameras_reconfirmed": 175,
+      "evaluation_samples": 207,
+      "strict_carry_samples": 22,
+      "non_strict_carry_samples": 185,
+      "meaning": "correlated captures within one archived run; not independent tasks"
+    },
+    "feedforward_local_640": {
+      "public_captures": 18,
+      "unique_public_timestamps": 17,
+      "time_range_s": [
+        10.87999999999941,
+        11.519999999999055
+      ],
+      "physical_steps_previously_executed": 640,
+      "prior_user_and_independent_evaluation_strict_steps": 640,
+      "fresh_visual_features_extracted_this_turn": false,
+      "meaning": "same saved v1 carrying initial condition; additional correlated positive control trace, not independent carry/empty discrimination test"
+    },
+    "sustained_smooth_empty_raw": {
+      "raw_public_captures": 307,
+      "physical_steps_previously_executed": 10880,
+      "last_public_time_s": 10.87999999999941,
+      "last_measured_gap_m": 0.012693701311945915,
+      "last_applied_clamp_target_m": 0.01282513327896595,
+      "public_feature_reextraction_this_turn": false,
+      "meaning": "Existing independent execution with no target-finger contacts is an archived closed-empty hard-negative candidate; target still contacts environmental support. It is not motion/pose matched to successful carry and was not used to fit a detector.",
+      "evaluation_only_target_finger_contact_rows_entire_run": 0,
+      "evaluation_only_target_other_support_contact_rows": 43516
+    }
+  },
+  "critical_counterexample": {
+    "matched_window_s": [
+      6.4,
+      6.72
+    ],
+    "v1_strict_carry_front_comotion_difference_px": 0.11188365859860916,
+    "supported_wait_front_comotion_difference_px": 0.03715229683919006,
+    "interpretation": "Supported object gives smaller front-target/EE motion difference; cannot equate smaller co-motion residual with unsupported carry. Both cases have valid encoders, visible targets, no reported association conflict and clamp on closing side."
+  },
+  "missing_coverage": {
+    "independent_empty_closed_clamp_moving": false,
+    "independent_supported_object_moving": true,
+    "real_wrong_target_or_camera_association_conflict": true,
+    "pre_release_support_at_cell_0": true,
+    "post_release_object_retained_and_gripper_withdrawn": true,
+    "matched_empty_closed_clamp_motion_for_discrimination": true
+  },
+  "carry_verdict": "unknown",
+  "pre_release_support_verdict": "unknown",
+  "post_release_placement_verdict": "unknown",
+  "automatic_transport_enabled": false,
+  "automatic_release_enabled": false,
+  "threshold_fit": false,
+  "input_protocol": {
+    "allowed": [
+      "actual_rgb",
+      "public_encoder_state_21",
+      "execution_commands_and_receipts",
+      "static_calibration",
+      "existing_public_rgb_association"
+    ],
+    "excluded": [
+      "object_identity_from_simulator",
+      "object_pose_or_height_truth",
+      "contact_truth",
+      "future_completion_labels"
+    ],
+    "evaluation_truth": "locked public features must be persisted before truth is opened; comparison remains separate"
+  }
+}

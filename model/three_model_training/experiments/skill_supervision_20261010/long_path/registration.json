@@ -1,0 +1,22 @@
+{
+  "scope": "archive_IK_reuse_and_static_long_path_audit_only",
+  "physics_steps": 0,
+  "model_calls": 0,
+  "IK_calls": 0,
+  "source_path": "v2_taskspace_transport_20261010/planning_result.json",
+  "endpoint_max_m": 0.08,
+  "timing": "smoothstep per archived5mm segment; minimum8 commands; multiple8 ceiling(1.5 max_joint_delta/.02/8)",
+  "sample_fractions": [
+    0,
+    0.25,
+    0.5,
+    0.75,
+    1
+  ],
+  "mechanical_limits": "unchanged frozen Transport contract actual ranges",
+  "geometry_payload_and_gravity": "reuse frozen modules/parameters without changes",
+  "static_wall_cap_s": 120,
+  "permission": "no new physical execution; do not reuse old640 lease",
+  "automatic_handoff": false,
+  "Place": false
+}

@@ -1,0 +1,761 @@
+{
+  "contract_version": 2,
+  "profile": "fixed_saved_state_transport_research",
+  "approval": "direct_user_approved_conditional_preflight",
+  "general_transport_enabled": false,
+  "control_ranges": [
+    [
+      -3.14,
+      3.14
+    ],
+    [
+      -3.14,
+      0.0
+    ],
+    [
+      -3.14,
+      3.14
+    ],
+    [
+      -3.14,
+      3.14
+    ],
+    [
+      -2.2,
+      2.2
+    ],
+    [
+      -3.14,
+      3.14
+    ],
+    [
+      0.0,
+      0.08
+    ]
+  ],
+  "mechanical_ranges": [
+    [
+      -3.14,
+      3.14
+    ],
+    [
+      -3.14,
+      0.0
+    ],
+    [
+      -3.14,
+      3.14
+    ],
+    [
+      -3.14,
+      3.14
+    ],
+    [
+      -1.57,
+      1.57
+    ],
+    [
+      -3.14,
+      3.14
+    ]
+  ],
+  "owners": [
+    "transport_trajectory",
+    "transport_trajectory",
+    "transport_trajectory",
+    "transport_trajectory",
+    "transport_trajectory",
+    "transport_trajectory",
+    "retained_clamp"
+  ],
+  "plan_file": "nominal_commands.npz",
+  "plan_sha256": "6c0fbad0880a19807f469467728d112f9b8ac1e7411a69b0b0fba7a57ced9a83",
+  "plan_raw_float32_sha256": "5ac1e0aa4e55b7e9ab6307dbf052977a3f7868a189170708c05b146a15d2220e",
+  "plan_shape": [
+    16,
+    7
+  ],
+  "plan_dtype": "float32",
+  "source_state_file": "sources/block_033_after.npz",
+  "source_state_sha256": "f762779843618ba1bdfe992e5e3ea7d448823b7bf25651203060745ed2043818",
+  "source_public_capture_file": "sources/capture_00306.npz",
+  "source_public_capture_sha256": "545f7d98fe89bcabd0c4f7cc57694c13837ac3ca243aefa7e245efae12d6c6a9",
+  "clamp_target_m": 0.007916290313005447,
+  "max_steps": 640,
+  "max_blocks": 2,
+  "max_physics_s": 0.64,
+  "max_wall_s": 120,
+  "observation_dt_s": 0.04,
+  "joint_target_delta_rad": 0.02,
+  "physics_dt_s": 0.001,
+  "start_absolute_time_s": 10.88,
+  "initial_velocity_policy": "restore complete integration state; never zero velocity",
+  "model_calls": {
+    "VLA": 0,
+    "WM": 0,
+    "Jev": 0
+  },
+  "no_release": true,
+  "Place_enabled": false,
+  "automatic_handoff_enabled": false,
+  "limits_source": "scene.xml joint.range and actuator.ctrlrange independently; setup loads scene unmodified",
+  "j5_range_note": "mechanical +/-1.57rad; command target +/-2.2rad; separate measured and command checks required",
+  "program_identity": {
+    "nominal_sequence": "same original16x7 float32",
+    "actual_servo_sequence": "computed from current public encoder every40ms",
+    "clamp": "nominal seventh channel unchanged",
+    "no_replanning": true,
+    "no_clipping_substitution": true,
+    "first_block_exact_replay_required": false
+  },
+  "permission_binding": {
+    "must_bind": [
+      "contract_sha256",
+      "task",
+      "target",
+      "stage",
+      "control_owners",
+      "source_state_sha256",
+      "plan_sha256",
+      "scene_sha256",
+      "physical_deadline",
+      "wall_deadline",
+      "maximum_commands",
+      "approval_record"
+    ],
+    "entry_requires": [
+      "explicit new user approval for this contract",
+      "valid current public input",
+      "historical saved state matches fingerprint",
+      "terminal hold ownership is explicitly handed to registered Transport generator",
+      "no channel ownership overlap",
+      "public handoff/carry evidence remains unknown; local hypothesis is labelled"
+    ],
+    "revoke_on": [
+      "expired",
+      "cancelled",
+      "task or target mismatch",
+      "control owner conflict",
+      "invalid or stale public input",
+      "unregistered command",
+      "unknown control source",
+      "physical protection stop"
+    ],
+    "no_automatic_grant_on_gripper_plan_exhaustion": true,
+    "permission_is_not_implicit_Jev_approval": true
+  },
+  "guard_responsibilities": {
+    "Pick_Close_Lift": "frozen original close_lift checks unchanged",
+    "TerminalHold": "original controller, clamp target, authority and deadline unchanged",
+    "Transport": "separate phase guard for this exact saved-state diagnostic; not a general replacement close_lift envelope"
+  },
+  "dynamic_bounds": {
+    "velocity_rad_s": null,
+    "acceleration_rad_s2": null,
+    "tracking_error_rad": null,
+    "load_slip_m": null,
+    "policy": "finite values and actual residuals recorded; null bounds do not mean infinite validated allowance. Generic/autonomous Transport remains closed. Explicit fixed local simulation approval may investigate these unknowns."
+  },
+  "position_tolerance_m": 0.0025,
+  "rotation_tolerance_rad": 0.05,
+  "endpoint_tolerances_are_not_dynamic_error_safety_limits": true,
+  "conditional_payload": {
+    "kind": "conditional_dual_finger_contact_object_envelope",
+    "frame": "ee_center_site",
+    "source": "static finger boxes over both full mechanical slide ranges; cube mesh half diagonal",
+    "assumption": "saved carried-state diagnosis: cube has contact with both fingers, remains rigidly carried; no known offset used",
+    "center_min_m": [
+      -0.025406691357636978,
+      -0.03540669135763705,
+      -0.04740669055763722
+    ],
+    "center_max_m": [
+      0.02540669135763723,
+      0.03540669135763715,
+      0.047406688357637006
+    ],
+    "payload_min_m": [
+      -0.050813382715274066,
+      -0.06081338271527413,
+      -0.07281338191527431
+    ],
+    "payload_max_m": [
+      0.050813382715274316,
+      0.06081338271527424,
+      0.07281337971527409
+    ],
+    "cube_half_diagonal_m": 0.025406691357637085,
+    "cube_body_span_m": [
+      0.029999999329447746,
+      0.029999999329447746,
+      0.029999999329447746
+    ],
+    "finger_union_bounds": [
+      {
+        "min": [
+          -0.055999999999999925,
+          -0.009999999999999964,
+          -0.021999999200000137
+        ],
+        "max": [
+          1.4633733226876265e-16,
+          0.02000000000000008,
+          0.021999996999999938
+        ]
+      },
+      {
+        "min": [
+          1.0735171885282299e-16,
+          -0.019999999999999976,
+          -0.021999999200000158
+        ],
+        "max": [
+          0.056000000000000175,
+          0.01000000000000007,
+          0.021999996999999917
+        ]
+      }
+    ],
+    "not_a_validated_public_carry_detector": true,
+    "not_final_cell_placement_certificate": true
+  },
+  "workspace": {
+    "definition": "actual robot and transformed conditional payload versus static scene geometry; not empirical q min/max from 400 steps",
+    "cell0_xy_interior_m": {
+      "x": [
+        -0.028,
+        0.042
+      ],
+      "y": [
+        0.295,
+        0.365
+      ]
+    },
+    "cell0_is_not_current_local_placement_goal": true,
+    "fixed_local_ee_goal_m": [
+      0.030058027988621595,
+      0.23026905873152378,
+      0.12326212252617103
+    ],
+    "geometry_source": "sources/source_geometry_audit.json",
+    "held_object_offset_known": false
+  },
+  "original_physical_stop_rules": [
+    "nonadjacent_distinct_weld_robot_contact",
+    "new_nonfinger_object_contact relative to block-start contact pairs",
+    "object_tray_wall_contact",
+    "unintended_other_cube_displacement_over_1mm relative to original reference",
+    "physics_step_budget"
+  ],
+  "previously_recorded_but_not_original_stop_rules": [
+    "measured qpos mechanical range",
+    "qvel velocity or acceleration limit",
+    "robot_floor contact category7",
+    "robot_tray contact category6",
+    "object_object contact category2",
+    "target loses strict unsupported grasp"
+  ],
+  "physical_guard_private_data_policy": "simulator contacts and object positions only isolated physical protection or independent evaluation; never public policy facts, target proposal or autonomous carrying evidence",
+  "prior_static_path_evidence": {
+    "scope": "nominal baseline only; not approval of changed servo sequence"
+  },
+  "unknowns": [
+    "calibrated speed and acceleration",
+    "calibrated tracking error",
+    "load slip and changing object-relative pose",
+    "reliable public carrying confirmation",
+    "safe physical loaded cancellation",
+    "continuous collision certificate",
+    "pre-release public support",
+    "post-release placement completion"
+  ],
+  "release_evidence": {
+    "public_carry": "unknown",
+    "pre_release_support": "unknown",
+    "post_release_placement": "unknown",
+    "release_disabled_until_independent_public_support_validation": true,
+    "post_release_completion_cannot_authorize_pre_release_opening": true
+  },
+  "validation_level": "independent research guard: software/static/archive checks only, not parity with frozen Pick protection, not physical or real-device safety certification",
+  "provenance": [
+    {
+      "name": "scene.xml",
+      "original": "{execution_root}/outputs/v2_dynamic_tracking_delivery_20261010/evidence/contract_readonly/source_readonly_snapshots/scene.xml",
+      "snapshot": "sources/scene.xml",
+      "sha256": "16355ecfb19e553be1a584cf12272cb7a23d16f70e2dede7d773ef4e5c24d905"
+    },
+    {
+      "name": "physics.py",
+      "original": "{execution_root}/outputs/v2_dynamic_tracking_delivery_20261010/evidence/contract_readonly/source_readonly_snapshots/physics.py",
+      "snapshot": "sources/physics.py",
+      "sha256": "225a5c39c34f34f730d7fe11e359e2bfb55a313f4b108314404603b5ddb1d013"
+    },
+    {
+      "name": "physical_labels.py",
+      "original": "{execution_root}/outputs/v2_dynamic_tracking_delivery_20261010/evidence/contract_readonly/source_readonly_snapshots/physical_labels.py",
+      "snapshot": "sources/physical_labels.py",
+      "sha256": "cc34e7b170c22950229aa2dd34b2b84d7ce04a848c464997aaf56982f71243ae"
+    },
+    {
+      "name": "run_minimal.py",
+      "original": "{execution_root}/outputs/v2_dynamic_tracking_delivery_20261010/evidence/contract_readonly/source_readonly_snapshots/run_minimal.py",
+      "snapshot": "sources/run_minimal.py",
+      "sha256": "9ceb10288066038ccc4edd47e13636e0315834bf46afb67ec70bc38463428636"
+    },
+    {
+      "name": "source_geometry_audit.json",
+      "original": "{execution_root}/outputs/v2_dynamic_tracking_delivery_20261010/evidence/contract_readonly/source_geometry_audit.json",
+      "snapshot": "sources/source_geometry_audit.json",
+      "sha256": "43c88bc9208cfbda9c2f8f1f577ab23bf09aa99c5033aea54a7a96c82cd9169a"
+    },
+    {
+      "name": "original_guard_review.json",
+      "original": "{execution_root}/outputs/v2_dynamic_tracking_delivery_20261010/evidence/contract_readonly/transport_guard_contract_review.json",
+      "snapshot": "sources/original_guard_review.json",
+      "sha256": "5c2d751c9b6ffe74a264947417088d344122f65ff8c5043e177c35e3f00a6114"
+    },
+    {
+      "name": "original_path_check.json",
+      "original": "{execution_root}/outputs/v2_dynamic_tracking_delivery_20261010/evidence/path_check.json",
+      "snapshot": "sources/original_path_check.json",
+      "sha256": "4fd802aa6b12edf21edc91cf5fff61a6837b718a167d64ae6c9014ec2debab7a"
+    },
+    {
+      "name": "original_local_registration.json",
+      "original": "{execution_root}/outputs/v2_dynamic_tracking_delivery_20261010/evidence/local_registration.json",
+      "snapshot": "sources/original_local_registration.json",
+      "sha256": "70d2d4f0978d8c6a3cc45ac7c2c60d42409a3f99ddbe877d12f2812843de647b"
+    },
+    {
+      "name": "task_geometry_and_expert_sources.json",
+      "original": "{execution_root}/outputs/v2_dynamic_tracking_delivery_20261010/evidence/task_geometry_and_expert_sources.json",
+      "snapshot": "sources/task_geometry_and_expert_sources.json",
+      "sha256": "7f79590eab6c4bafd56b5d1f14bd3882e9467d4ae813788a11742d8457042590"
+    },
+    {
+      "name": "public_calibration.json",
+      "original": "{execution_root}/outputs/v2_dynamic_tracking_delivery_20261010/evidence/public_calibration.json",
+      "snapshot": "sources/public_calibration.json",
+      "sha256": "3b2caea06c82162a2ddd5b8aa0f4429c482ab2143d8999ced1ed1a1521424b97"
+    },
+    {
+      "name": "gripper_rules.json",
+      "original": "{execution_root}/outputs/v2_dynamic_tracking_delivery_20261010/evidence/gripper_rules.json",
+      "snapshot": "sources/gripper_rules.json",
+      "sha256": "264e0d13c6a3fce456e3a67e374f03ade687ee2d9cd55c3e313baa082eda735c"
+    },
+    {
+      "name": "hold_rules.json",
+      "original": "{execution_root}/outputs/v2_dynamic_tracking_delivery_20261010/evidence/hold_rules.json",
+      "snapshot": "sources/hold_rules.json",
+      "sha256": "fd84f2d92f25dd8a3c865ce58ec6ec08016f8e7098313a513745824939733b37"
+    },
+    {
+      "name": "block_033_after.npz",
+      "original": "{execution_root}/outputs/v2_dynamic_tracking_delivery_20261010/evidence/source_references/v1_saved_state/block_033_after.npz",
+      "snapshot": "sources/block_033_after.npz",
+      "sha256": "f762779843618ba1bdfe992e5e3ea7d448823b7bf25651203060745ed2043818"
+    },
+    {
+      "name": "capture_00306.npz",
+      "original": "{execution_root}/outputs/v2_dynamic_tracking_delivery_20261010/evidence/source_references/v1_saved_state/capture_00306.npz",
+      "snapshot": "sources/capture_00306.npz",
+      "sha256": "545f7d98fe89bcabd0c4f7cc57694c13837ac3ca243aefa7e245efae12d6c6a9"
+    },
+    {
+      "name": "continuation_source.py",
+      "original": "{execution_root}/outputs/v2_taskspace_transport_delivery_20261010/evidence/executed_local_source/runtime/gripper_continuation.py",
+      "snapshot": "sources/continuation_source.py",
+      "sha256": "5739218efc4c1b302e98488935f504dbbcb97bcb5166b828e4ccc3166207dc4b"
+    }
+  ],
+  "scene_sha256": "16355ecfb19e553be1a584cf12272cb7a23d16f70e2dede7d773ef4e5c24d905",
+  "physical_execution_current_turn": false,
+  "v1_modified": false,
+  "notes": [
+    "New direct user approval covers only one conditional640-step local feedforward branch.",
+    "Old control fingerprints bind only the nominal trajectory; actual commands get separate dynamic bindings."
+  ],
+  "initial_q_rad": [
+    -0.32332944869995117,
+    -1.7986030578613281,
+    1.3436247110366821,
+    0.00046382006257772446,
+    1.1453068256378174,
+    1.913435459136963
+  ],
+  "additional_physical_protection": [
+    "robot_floor_or_tray_contact",
+    "carried_object_contact_with_any_nonfinger_geometry"
+  ],
+  "static_geometry_policy": "registered scene only, encoder FK; target table pose excluded under saved-state carry hypothesis; live simulator protection independent, not public policy evidence",
+  "control_law": "fixed_structure_gravity_feedforward",
+  "plan_role": "nominal_trajectory_not_actual_servo_matrix",
+  "nominal_plan_sha256": "6c0fbad0880a19807f469467728d112f9b8ac1e7411a69b0b0fba7a57ced9a83",
+  "nominal_raw_float32_sha256": "5ac1e0aa4e55b7e9ab6307dbf052977a3f7868a189170708c05b146a15d2220e",
+  "gravity_method_sha256": "bfe5926c6874731e0ed886a5c5c86c97b97e3fa5422dff7aae52fd96ce30ad2e",
+  "gravity_parameters_sha256": "38cd517784229a69b19b8cd3ce75f15b80cb01880e234bcd14765d0570f9a8de",
+  "gravity_fixed_parameters": {
+    "body_names": [
+      "measured_robot_mount",
+      "base_link",
+      "j1_Link",
+      "j2_Link",
+      "j3_Link",
+      "j4_Link",
+      "j5_Link",
+      "j6_Link",
+      "gripper_base",
+      "wrist_camera_body",
+      "ee_center_body"
+    ],
+    "excluded_body_names": [
+      "left_gripper_group",
+      "right_gripper_group"
+    ],
+    "gravity_m_s2": [
+      0.0,
+      0.0,
+      -9.81
+    ],
+    "mass_kg": [
+      0.0,
+      0.5062200455297206,
+      0.427328,
+      0.0496479,
+      0.398882,
+      0.24806,
+      0.147033,
+      0.0,
+      0.141495,
+      0.04575,
+      0.0
+    ],
+    "body_ipos_m": [
+      [
+        0.08,
+        0.08,
+        0.0
+      ],
+      [
+        0.08006969970897387,
+        0.07995729894227177,
+        0.007422113001686464
+      ],
+      [
+        -0.00368331,
+        -0.0113205,
+        0.112329
+      ],
+      [
+        -0.075,
+        0.0,
+        0.00549028
+      ],
+      [
+        -0.0260794,
+        0.0312427,
+        0.0488675
+      ],
+      [
+        -0.00396142,
+        -1.13151e-06,
+        0.0774846
+      ],
+      [
+        0.0578983,
+        2.75448e-07,
+        0.033873
+      ],
+      [
+        0.1025,
+        0.0,
+        0.05
+      ],
+      [
+        0.0,
+        0.001,
+        -0.0035
+      ],
+      [
+        0.018000000010465915,
+        -0.01796721067263597,
+        0.009113937761594911
+      ],
+      [
+        0.0,
+        0.0,
+        0.0697
+      ]
+    ],
+    "body_pos_m": [
+      [
+        0.08,
+        0.08,
+        0.0
+      ],
+      [
+        -0.08,
+        -0.08,
+        0.0
+      ],
+      [
+        0.08,
+        0.08,
+        0.039
+      ],
+      [
+        0.0,
+        0.052981,
+        0.153
+      ],
+      [
+        -0.15,
+        0.0,
+        0.018
+      ],
+      [
+        0.009,
+        0.059361,
+        0.035
+      ],
+      [
+        -0.05,
+        0.0,
+        0.104
+      ],
+      [
+        0.1025,
+        0.0,
+        0.05
+      ],
+      [
+        0.0,
+        0.0,
+        -0.0465
+      ],
+      [
+        0.018,
+        -0.068636332678,
+        0.005
+      ],
+      [
+        0.0,
+        0.0,
+        0.0697
+      ]
+    ],
+    "body_quat": [
+      [
+        0.7071067811865476,
+        0.0,
+        0.0,
+        -0.7071067811865476
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0007963267107332633,
+        0.0,
+        0.0,
+        0.9999996829318346
+      ],
+      [
+        0.7073882691671998,
+        0.706825181105366,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -2.5983822003524582e-06,
+        0.7073882691624276,
+        -2.5963138624100966e-06,
+        0.7068251811005976
+      ],
+      [
+        0.0005617893430799512,
+        -0.7071065569843051,
+        -1.2986737068782443e-06,
+        -0.7071067822195238
+      ],
+      [
+        0.7071054825112363,
+        0.0,
+        -0.7071080798594735,
+        0.0
+      ],
+      [
+        6.123233995736766e-17,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.1383741455039899,
+        0.9903800259779276
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "parent_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      9
+    ],
+    "joint_names": [
+      "j1_joint",
+      "j2_joint",
+      "j3_joint",
+      "j4_joint",
+      "j5_joint",
+      "j6_joint"
+    ],
+    "joint_axis": [
+      [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    ],
+    "joint_pos": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "qpos0": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "kp": 100,
+    "kv": 10,
+    "actuator_force_limits_Nm": [
+      [
+        -20.0,
+        20.0
+      ],
+      [
+        -20.0,
+        20.0
+      ],
+      [
+        -20.0,
+        20.0
+      ],
+      [
+        -20.0,
+        20.0
+      ],
+      [
+        -20.0,
+        20.0
+      ],
+      [
+        -20.0,
+        20.0
+      ]
+    ]
+  },
+  "online_feedforward_inputs": [
+    "valid current public six-axis encoder only"
+  ],
+  "excluded_feedforward_inputs": [
+    "private contacts",
+    "object pose",
+    "future state",
+    "unknown payload",
+    "mobile slide configuration"
+  ],
+  "actual_control_binding": "per40ms public encoder -> fixed method -> compensated float32 servo -> actual step receipt",
+  "no_static_servo_plan_substitution": true,
+  "baseline_root": "{execution_root}/v2_transport_guard_20261010",
+  "one_physical_attempt": true,
+  "initial_servo_command": [
+    -0.32332995533943176,
+    -1.7885793447494507,
+    1.3501911163330078,
+    0.00034314810181967914,
+    1.1454988718032837,
+    1.9134410619735718,
+    0.007916290313005447
+  ]
+}

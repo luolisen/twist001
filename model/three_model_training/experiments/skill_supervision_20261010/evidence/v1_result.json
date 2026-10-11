@@ -1,0 +1,83 @@
+{
+  "classification": "known_development_scene_stage_supervision_pick_and_hold_passed",
+  "starts": 1,
+  "second_start_used": false,
+  "physics_steps": 10880,
+  "blocks": 34,
+  "original_8_320": {
+    "obtained": true,
+    "task_completion": false,
+    "metrics": {
+      "physics_steps": 8320,
+      "time_s": 8.32,
+      "peak_lift_mm": 45.13880594136376,
+      "end_lift_mm": 45.13880594136376,
+      "correct_target_contact_steps": 2946,
+      "strict_longest_s": 2.25,
+      "last_second_min_lift_mm": 12.04009228801001,
+      "last_second_height_range_mm": 33.09871365335375,
+      "last_second_dual_no_support_all": true
+    }
+  },
+  "extended_10_880": {
+    "obtained": true,
+    "task_completion": true,
+    "metrics": {
+      "physics_steps": 10880,
+      "time_s": 10.88,
+      "peak_lift_mm": 97.00940875048197,
+      "end_lift_mm": 92.87323512764497,
+      "correct_target_contact_steps": 5506,
+      "strict_longest_s": 4.8100000000000005,
+      "last_second_min_lift_mm": 92.87323512764497,
+      "last_second_height_range_mm": 0.8012235858723682,
+      "last_second_dual_no_support_all": true
+    }
+  },
+  "calls": {
+    "preflight_Jev": 0,
+    "online_Jev_target": 3,
+    "online_Jev_supervision": 3,
+    "Jev_total": 6,
+    "online_VLA": 34,
+    "online_WM": 91,
+    "training_updates": 0,
+    "hardware_actions": 0
+  },
+  "wall_seconds_including_load_and_startup": 194.66892325002118,
+  "online_loop_wall_seconds": 177.29526308301138,
+  "simulation_pause_for_Jev_wall_seconds": 76.31203808297869,
+  "native_authorizations": [
+    {
+      "physics_time_s": 0,
+      "choice": "approve_phase",
+      "inference_seconds": 16.732400666020112
+    },
+    {
+      "physics_time_s": 4.16,
+      "choice": "approve_phase",
+      "inference_seconds": 19.513735707994783
+    },
+    {
+      "physics_time_s": 9.28,
+      "choice": "approve_phase",
+      "inference_seconds": 15.834632792015327
+    }
+  ],
+  "normal_plan_exhaustion_handoff_at_s": 6.4,
+  "same_compound_permit_retained": true,
+  "actual_gripper_plan_commands_consumed": 50,
+  "terminal_hold_commands_executed": 40,
+  "actual_request_minimum_state_token_margin": 215,
+  "complete_physical_trace_matches_success_baseline_steps": 10880,
+  "verification_passed": true,
+  "successful_baseline_unchanged": true,
+  "system_completion": {
+    "value": null,
+    "reason": "public_grasp_completion_estimator_not_validated"
+  },
+  "supervision_benefit_established": false,
+  "generalization_reliability_sorting_hardware_realtime_established": false,
+  "weight_bytes_not_in_delivery": true,
+  "raw_sources": "rapid_composite_stage_20261010/round_result.json and online/"
+}

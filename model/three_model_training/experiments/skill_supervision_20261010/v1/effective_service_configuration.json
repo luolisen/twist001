@@ -1,0 +1,12 @@
+{
+  "pid": 60017,
+  "plan_file": "{execution_root}/rapid_composite_stage_20261010/online_plan.json",
+  "plan_sha256": "de372f4a6eeb520829c855a1c5856ab0b15c40b0c0c7a627940ba41ca431234b",
+  "profile_internal_stages": false,
+  "request_endpoint_sync": true,
+  "presentation": true,
+  "phase_evidence_integrated": true,
+  "Jev_role": "finite_phase_supervision",
+  "device": "mps",
+  "threads": 4
+}

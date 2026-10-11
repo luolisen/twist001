@@ -1,0 +1,309 @@
+{
+  "scope": "fixed_orientation_continuation_and_optional_one_saved_state_transport_only",
+  "source_v1": "{execution_root}/rapid_composite_stage_20261010",
+  "current_public_capture": "{execution_root}/rapid_composite_stage_20261010/online/episode/public_history/capture_00306.npz",
+  "saved_integration_state": "{execution_root}/rapid_composite_stage_20261010/online/episode/block_033_after.npz",
+  "scene": "{execution_root}/wm_contact_v5/sources/layout_seed_2026360001/scene.xml",
+  "scene_sha256": "16355ecfb19e553be1a584cf12272cb7a23d16f70e2dede7d773ef4e5c24d905",
+  "current_q_rad": [
+    -0.32332944869995117,
+    -1.7986030578613281,
+    1.3436247110366821,
+    0.00046382006257772446,
+    1.1453068256378174,
+    1.913435459136963
+  ],
+  "current_ee_pose": [
+    [
+      -0.02046082251989828,
+      -0.9997480910551824,
+      0.009225463312465968,
+      0.030790992179519205
+    ],
+    [
+      -0.9994266544349951,
+      0.02020352995320907,
+      -0.027169464151947625,
+      0.22716475477319767
+    ],
+    [
+      0.02697623299653612,
+      -0.00977608351796439,
+      -0.999588270761701,
+      0.12318617676878052
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "last_clamp_target_m": 0.007916290313005447,
+  "limits": [
+    [
+      -3.14,
+      3.14
+    ],
+    [
+      -3.14,
+      0.0
+    ],
+    [
+      -3.14,
+      3.14
+    ],
+    [
+      -3.14,
+      3.14
+    ],
+    [
+      -2.2,
+      2.2
+    ],
+    [
+      -3.14,
+      3.14
+    ],
+    [
+      0.0,
+      0.08
+    ]
+  ],
+  "position_tolerance_m": 0.0025,
+  "rotation_tolerance_rad": 0.05,
+  "positive_checks": [
+    {
+      "source": "{execution_root}/rapid_composite_stage_20261010/online/episode/public_history/capture_00306.npz",
+      "sha256": "545f7d98fe89bcabd0c4f7cc57694c13837ac3ca243aefa7e245efae12d6c6a9",
+      "public_q_rad": [
+        -0.32332944869995117,
+        -1.7986030578613281,
+        1.3436247110366821,
+        0.00046382006257772446,
+        1.1453068256378174,
+        1.913435459136963
+      ]
+    },
+    {
+      "source": "{execution_root}/rapid_composite_stage_20261010/online/episode/public_history/capture_00261.npz",
+      "sha256": "b1e0dca71d6c05841139561bb269a71bf063edfd0c87319fde514941ebf599b9",
+      "public_q_rad": [
+        -0.32332995533943176,
+        -1.7885793447494507,
+        1.3501911163330078,
+        0.00034314810181967914,
+        1.1454988718032837,
+        1.9134410619735718
+      ]
+    }
+  ],
+  "method": "bounded six-dimensional normalized least squares, hard tolerances verified after each solve; seed only previous feasible point",
+  "per_pose_max_nfev": 80,
+  "static_wall_cap_s": 120,
+  "step_basis": "one sixth static cube edge",
+  "diagnostic_basis": "one third static cube edge",
+  "continuation_points": [
+    {
+      "distance_m": 0.004999999888241291,
+      "ee_world_m": [
+        0.029664006149151836,
+        0.23203608943320306,
+        0.12318617676878052
+      ]
+    },
+    {
+      "distance_m": 0.009999999776482582,
+      "ee_world_m": [
+        0.028537020118784468,
+        0.23690742409320842,
+        0.12318617676878052
+      ]
+    },
+    {
+      "distance_m": 0.014999999664723873,
+      "ee_world_m": [
+        0.0274100340884171,
+        0.2417787587532138,
+        0.12318617676878052
+      ]
+    },
+    {
+      "distance_m": 0.019999999552965164,
+      "ee_world_m": [
+        0.026283048058049735,
+        0.2466500934132192,
+        0.12318617676878052
+      ]
+    },
+    {
+      "distance_m": 0.024999999441206455,
+      "ee_world_m": [
+        0.025156062027682363,
+        0.2515214280732246,
+        0.12318617676878052
+      ]
+    },
+    {
+      "distance_m": 0.029999999329447746,
+      "ee_world_m": [
+        0.024029075997315,
+        0.25639276273323,
+        0.12318617676878052
+      ]
+    },
+    {
+      "distance_m": 0.03499999921768904,
+      "ee_world_m": [
+        0.022902089966947627,
+        0.2612640973932353,
+        0.12318617676878052
+      ]
+    },
+    {
+      "distance_m": 0.03999999910593033,
+      "ee_world_m": [
+        0.021775103936580262,
+        0.2661354320532407,
+        0.12318617676878052
+      ]
+    },
+    {
+      "distance_m": 0.04499999899417162,
+      "ee_world_m": [
+        0.020648117906212893,
+        0.2710067667132461,
+        0.12318617676878052
+      ]
+    },
+    {
+      "distance_m": 0.04999999888241291,
+      "ee_world_m": [
+        0.019521131875845525,
+        0.27587810137325147,
+        0.12318617676878052
+      ]
+    },
+    {
+      "distance_m": 0.0549999987706542,
+      "ee_world_m": [
+        0.018394145845478157,
+        0.28074943603325686,
+        0.12318617676878052
+      ]
+    },
+    {
+      "distance_m": 0.05999999865889549,
+      "ee_world_m": [
+        0.01726715981511079,
+        0.2856207706932622,
+        0.12318617676878052
+      ]
+    },
+    {
+      "distance_m": 0.06499999854713678,
+      "ee_world_m": [
+        0.016140173784743424,
+        0.2904921053532676,
+        0.12318617676878052
+      ]
+    },
+    {
+      "distance_m": 0.06999999843537807,
+      "ee_world_m": [
+        0.015013187754376052,
+        0.29536344001327297,
+        0.12318617676878052
+      ]
+    },
+    {
+      "distance_m": 0.07499999832361937,
+      "ee_world_m": [
+        0.013886201724008684,
+        0.30023477467327836,
+        0.12318617676878052
+      ]
+    },
+    {
+      "distance_m": 0.07999999821186066,
+      "ee_world_m": [
+        0.012759215693641319,
+        0.30510610933328375,
+        0.12318617676878052
+      ]
+    },
+    {
+      "distance_m": 0.08499999810010195,
+      "ee_world_m": [
+        0.01163222966327395,
+        0.30997744399328914,
+        0.12318617676878052
+      ]
+    },
+    {
+      "distance_m": 0.08999999798834324,
+      "ee_world_m": [
+        0.010505243632906582,
+        0.3148487786532945,
+        0.12318617676878052
+      ]
+    },
+    {
+      "distance_m": 0.09499999787658453,
+      "ee_world_m": [
+        0.009378257602539214,
+        0.31972011331329986,
+        0.12318617676878052
+      ]
+    },
+    {
+      "distance_m": 0.09999999776482582,
+      "ee_world_m": [
+        0.008251271572171846,
+        0.32459144797330525,
+        0.12318617676878052
+      ]
+    },
+    {
+      "distance_m": 0.10499999765306711,
+      "ee_world_m": [
+        0.007124285541804477,
+        0.32946278263331064,
+        0.12318617676878052
+      ]
+    },
+    {
+      "distance_m": 0.10555140439493223,
+      "ee_world_m": [
+        0.007000000000000006,
+        0.33,
+        0.12318617676878052
+      ]
+    }
+  ],
+  "stop_rule": "stop first hard-tolerance failure; no extra initial values",
+  "diagnostic_distance_m": 0.009999999776482582,
+  "diagnostic_commands": 16,
+  "command_dt_s": 0.04,
+  "physics_dt_s": 0.001,
+  "additional_adjacent_command_bound_rad": 0.02,
+  "local_physics_cap": 640,
+  "local_wall_cap_s": 120,
+  "local_trial_cap": 1,
+  "local_requires": [
+    "10mm intermediate original-orientation endpoint",
+    "static whole path and conservative payload envelope",
+    "original public arm envelope and guards"
+  ],
+  "models": {
+    "VLA": 0,
+    "WM": 0,
+    "Jev": 0
+  },
+  "full_trial": false,
+  "release": false,
+  "new_orientation_online": false,
+  "code_sha256": {
+    "{execution_root}/v2_taskspace_transport_20261010/taskspace_plan.py": "151289e2ad597458c99bdd38012579f7aecadc9d24f98a183cd57485bcadcb2d"
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "scope": "static_only_no_physical_permission",
+  "physics_steps": 0,
+  "model_calls": {
+    "VLA": 0,
+    "WM": 0,
+    "Jev": 0
+  },
+  "IK_solver_calls": 0,
+  "reuses_previous_IK": true,
+  "candidate_route_mm": 79.99999821186066,
+  "candidate_nominal_commands": 160,
+  "candidate_blocks": 20,
+  "candidate_nominal_duration_s": 6.4,
+  "timing_rule": "per5mm smoothstep, minimum8 commands; multiple8 ceil(1.5*max_joint_delta/.02/8); not a calibrated dynamic bound",
+  "timing_segments": [
+    {
+      "route_end_m": 0.004999999888241291,
+      "commands": 8,
+      "duration_s": 0.32
+    },
+    {
+      "route_end_m": 0.009999999776482582,
+      "commands": 8,
+      "duration_s": 0.32
+    },
+    {
+      "route_end_m": 0.014999999664723873,
+      "commands": 8,
+      "duration_s": 0.32
+    },
+    {
+      "route_end_m": 0.019999999552965164,
+      "commands": 8,
+      "duration_s": 0.32
+    },
+    {
+      "route_end_m": 0.024999999441206455,
+      "commands": 8,
+      "duration_s": 0.32
+    },
+    {
+      "route_end_m": 0.029999999329447746,
+      "commands": 8,
+      "duration_s": 0.32
+    },
+    {
+      "route_end_m": 0.03499999921768904,
+      "commands": 8,
+      "duration_s": 0.32
+    },
+    {
+      "route_end_m": 0.03999999910593033,
+      "commands": 8,
+      "duration_s": 0.32
+    },
+    {
+      "route_end_m": 0.04499999899417162,
+      "commands": 8,
+      "duration_s": 0.32
+    },
+    {
+      "route_end_m": 0.04999999888241291,
+      "commands": 8,
+      "duration_s": 0.32
+    },
+    {
+      "route_end_m": 0.0549999987706542,
+      "commands": 8,
+      "duration_s": 0.32
+    },
+    {
+      "route_end_m": 0.05999999865889549,
+      "commands": 8,
+      "duration_s": 0.32
+    },
+    {
+      "route_end_m": 0.06499999854713678,
+      "commands": 16,
+      "duration_s": 0.64
+    },
+    {
+      "route_end_m": 0.06999999843537807,
+      "commands": 16,
+      "duration_s": 0.64
+    },
+    {
+      "route_end_m": 0.07499999832361937,
+      "commands": 24,
+      "duration_s": 0.96
+    },
+    {
+      "route_end_m": 0.07999999821186066,
+      "commands": 8,
+      "duration_s": 0.32
+    }
+  ],
+  "candidate_static_passed": false,
+  "first_path_failure": {
+    "command_index": 132,
+    "segment": 14,
+    "segment_end_mm": 74.99999832361937,
+    "nominal": [
+      -0.2946382164955139,
+      -2.4657421112060547,
+      2.4368443489074707,
+      0.0009888255735859275,
+      1.5701885223388672,
+      1.8849680423736572,
+      0.007916290313005447
+    ],
+    "servo_proxy": null,
+    "servo_proxy_geometry_failures": [],
+    "command_failures": [
+      "nominal_mechanical_range"
+    ],
+    "path_failures": [
+      {
+        "command_index": 132,
+        "fraction": 1.0,
+        "route_projection_mm": 70.72616029755201,
+        "ee_world_m": [
+          0.014838176071296656,
+          0.29606829273791196,
+          0.12329046257785611
+        ],
+        "orientation_error_rad": 0.0011829268373369061,
+        "corridor_error_mm": 0.10493299073191184,
+        "failure_kinds": [
+          "sample_mechanical_range"
+        ],
+        "overlap_geometries": []
+      }
+    ]
+  },
+  "first_archived_IK_failure": {
+    "q_rad": [
+      -0.29078063755122313,
+      -2.573377415952761,
+      2.658172984160354,
+      0.0010461369615888058,
+      1.6320199717108468,
+      1.8810800892543247
+    ],
+    "target_ee_world_m": [
+      0.01163222966327395,
+      0.30997744399328914,
+      0.12318617676878052
+    ],
+    "actual_static_ee_world_m": [
+      0.011802986006398297,
+      0.30940516758193354,
+      0.12280488703883824
+    ],
+    "position_error_m": 0.0007085477244834669,
+    "rotation_error_rad": 0.05304085941671869,
+    "hard_constraints_met": false,
+    "joint_limits_met": true,
+    "nfev": 16,
+    "status": 2,
+    "message": "`ftol` termination condition is satisfied.",
+    "solver_success": true,
+    "jacobian_singular_values": [
+      135.49575770807914,
+      131.26922383702245,
+      77.86121409023652,
+      25.148729587202347,
+      11.32299877239824,
+      5.32220116141923e-06
+    ],
+    "distance_along_route_m": 0.08499999810010195,
+    "initial_q_rad": [
+      -0.2920629433866484,
+      -2.5724699561294444,
+      2.6581722766813987,
+      0.0009931818382119867,
+      1.6540606915295741,
+      1.882367060838724
+    ]
+  },
+  "first_discrete_mechanical_failure": {
+    "route_mm": 74.99999832361937,
+    "old_control_bounded_IK_pass": true,
+    "position_error_mm": 0.14491668289202073,
+    "rotation_error_rad": 0.010549833954896184,
+    "q_rad": [
+      -0.2934002706927276,
+      -2.571956946191743,
+      2.658171912206384,
+      0.0009396080836383704,
+      1.6759330952035427,
+      1.8837096104908935
+    ],
+    "mechanical_violations": [
+      {
+        "joint": 5,
+        "q_rad": 1.6759330952035427,
+        "range_rad": [
+          -1.57,
+          1.57
+        ]
+      }
+    ],
+    "mechanically_legal": false
+  },
+  "legal_complete_prefix_commands": 128,
+  "legal_complete_prefix_blocks": 16,
+  "legal_prefix_duration_s": 5.12,
+  "legal_prefix_projected_mm": 70.00001749252698,
+  "legal_prefix_actual_static_ee_world_m": [
+    0.015013182381131229,
+    0.2953634583306699,
+    0.12318620576662195
+  ],
+  "static_sample_count": 800,
+  "max_nominal_adjacent_rad": 0.0184628963470459,
+  "max_proxy_servo_adjacent_rad": 0.018434762954711914,
+  "max_orientation_error_rad": 0.0319083067614029,
+  "max_corridor_error_mm": 0.24825343227863744,
+  "cell0_center_world_m": [
+    0.007000000000000006,
+    0.33,
+    0.003
+  ],
+  "cell0_source": "archived actual scene cell0 geometry",
+  "target_kind": "EE carry intermediate along registered horizontal route; not object center or release pose",
+  "held_object_offset": "unknown; frozen conditional payload envelope unchanged",
+  "fixed_orientation_tolerance_rad": 0.05,
+  "position_tolerance_m": 0.0025,
+  "unknowns": [
+    "future actual public encoder/servo targets",
+    "dynamic following on longer path",
+    "payload offset/slip",
+    "public carry/support/release evidence",
+    "continuous collision certificate"
+  ],
+  "servo_proxy_is_executable_matrix": false,
+  "continuous_collision_certified": false,
+  "old_640_step_permission_reused": false,
+  "new_local_simulation_executed": false,
+  "servo_proxy_geometry_checked": true,
+  "checker_sha256": "15ea6e4a9abdb949ff5af3758d8d685a6278f39d5129f53a7bddfe5e38dae8cc",
+  "registration_sha256": "3b36a708ebc9848123aafc825c43cd35cd0cc29d3928e73587397f613aab566d",
+  "frozen_sources_sha256": {
+    "{execution_root}/v2_transport_feedforward_20261010/contract.json": "73fd2ea508961ca2dfe781d433b9415c93a14aa0b7e86449e886ddf0952541c3",
+    "{execution_root}/v2_transport_feedforward_20261010/runtime/gravity_feedforward.py": "bfe5926c6874731e0ed886a5c5c86c97b97e3fa5422dff7aae52fd96ce30ad2e",
+    "{execution_root}/v2_transport_feedforward_20261010/runtime/transport_geometry.py": "56a6e194a28e1f07cf4c1c7e9ae0c74527d345db8792fb851a3098f602102645",
+    "{execution_root}/v2_transport_feedforward_20261010/runtime/skill_generators.py": "5ddd1fd96e8d49915e07f75b100ab41182954e92545d26164932abc292b13795",
+    "{execution_root}/v2_transport_feedforward_20261010/sources/public_calibration.json": "3b2caea06c82162a2ddd5b8aa0f4429c482ab2143d8999ced1ed1a1521424b97",
+    "{execution_root}/v2_taskspace_transport_20261010/registration.json": "778e67d9223bbd155ef28756132841ab17baebf66598dd667757ed9e39922ea3",
+    "{execution_root}/v2_taskspace_transport_20261010/planning_result.json": "b73c4b2cb1e8055b1cffe646e0ba6a104fecc1423549492d16248374b7eb0180",
+    "{execution_root}/wm_contact_v5/sources/layout_seed_2026360001/scene.xml": "16355ecfb19e553be1a584cf12272cb7a23d16f70e2dede7d773ef4e5c24d905"
+  },
+  "frozen_sources_unchanged": true,
+  "wall_seconds": 1.629424208018463
+}

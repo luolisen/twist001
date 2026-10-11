@@ -1,0 +1,14 @@
+{
+  "final_script_sha256": "15ea6e4a9abdb949ff5af3758d8d685a6278f39d5129f53a7bddfe5e38dae8cc",
+  "result_matches_script_sha256": true,
+  "prefix_nominal_and_servo_proxy_geometry_pass": true,
+  "prefix_nominal_samples": 640,
+  "prefix_servo_proxy_samples": 128,
+  "response_tail_static_geometry": "same nominal and same hypothetical servo pose as verified prefix endpoint, no new dynamics claimed",
+  "frozen_sources_unchanged": true,
+  "new_physics_steps": 0,
+  "IK_calls": 0,
+  "model_calls": 0,
+  "prior_source_review_note": "initial review requested servo proxy geometry; final static audit includes it and passes prefix",
+  "proposal_actual_execution_status": "not launched"
+}

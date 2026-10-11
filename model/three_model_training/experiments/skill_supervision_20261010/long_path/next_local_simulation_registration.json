@@ -1,0 +1,64 @@
+{
+  "status": "proposal_requires_new_user_confirmation_and_independent_execution_gate",
+  "physical_execution_authorized": false,
+  "scope": "one_saved_v1_carry_state_local_70mm_Transport_only",
+  "source_state_sha256": "f762779843618ba1bdfe992e5e3ea7d448823b7bf25651203060745ed2043818",
+  "scene_sha256": "16355ecfb19e553be1a584cf12272cb7a23d16f70e2dede7d773ef4e5c24d905",
+  "initial_state": "full frozen10.880sec integration state; preserve nonzero velocities",
+  "nominal_file": "proposed_70mm_nominal_136_commands.npz",
+  "nominal_file_sha256": "0d1f56c3af9567217e0697270a98a8fa5859c8b888054d0777ac15e14990a41d",
+  "nominal_raw_float32_sha256": "9b1d7dfdc7120df1a1df3ebc76327803d8e9cefee9c981e05f12a78ce4024f56",
+  "nominal_shape": [
+    136,
+    7
+  ],
+  "clamp_target_m": 0.007916290313005447,
+  "goal_kind": "intermediate EE carry waypoint, not cell0 object center or release pose",
+  "goal_ee_world_m": [
+    0.015013182381131229,
+    0.2953634583306699,
+    0.12318620576662195
+  ],
+  "route_length_m": 0.07,
+  "planned_motion_s": 5.12,
+  "fixed_response_tail_s": 0.32,
+  "maximum_physics_s": 5.44,
+  "maximum_physics_steps": 5440,
+  "maximum_commands": 136,
+  "maximum_blocks": 17,
+  "maximum_wall_s": 120,
+  "attempts": 1,
+  "model_calls": {
+    "VLA": 0,
+    "WM": 0,
+    "Jev": 0
+  },
+  "position_tolerance_m": 0.0025,
+  "orientation_tolerance_rad": 0.05,
+  "control_law": "same frozen fixed-structure FF, recompute per40ms from actual public encoder; clamp unchanged",
+  "static_ff_proxy_is_not_actual_servo": true,
+  "no_private_control_inputs": true,
+  "geometry_protection": "same unchanged conditional payload envelope, range, per-step physical guards and cancellation checks; not close_lift expansion",
+  "minimum_prefix_J5_nominal_margin_rad": 0.013165182590484714,
+  "requires_before_launch": [
+    "new finite136-command skill permission and bound fingerprints; old16x7 guard/640-step approval cannot execute this plan",
+    "current actual encoder-based servo range/adjacent/geometry checks every40ms and actual-state protection each physical step",
+    "explicit terminal7-channel ownership release to new finite local research lease",
+    "record all actual servo and public-state bindings and receipts; never fixed servo proxy replay"
+  ],
+  "exits": [
+    "finite completion",
+    "mechanical/geometry/other-object protection",
+    "invalid/stale public observation",
+    "permission/cancellation/control conflict",
+    "wall or step deadline",
+    "exception"
+  ],
+  "no_retry_or_extension": true,
+  "automatic_Transport_handoff": false,
+  "Place_or_release": false,
+  "public_carry": "unknown",
+  "private_grasp_or_contact": "independent evaluation only; historical starting-state hypothesis",
+  "tail_not_guaranteed_to_converge": true,
+  "initial_small_test_repeat": false
+}

@@ -1,0 +1,107 @@
+{
+  "status": "proposed_only_not_authorized_or_executed",
+  "current_turn_new_physics_steps": 0,
+  "current_turn_new_model_calls": {
+    "VLA": 0,
+    "WM": 0,
+    "Jev": 0
+  },
+  "priority_zero": {
+    "operation": "Reuse archived sustained-smooth empty-grasp RGB/encoders/receipts first; run unchanged public feature extraction before opening evaluation truth.",
+    "source": "work/smooth_chain_retry_20261010/evidence/online_candidate/episode",
+    "additional_physics": 0,
+    "purpose": "Add already-available closed-empty target-supported data to the evidence table without falsely calling early open-gripper frames a hard negative.",
+    "limitation": "Different arm posture, commands and target relation from successful carry; not a matched discrimination experiment. No threshold fitting or automatic handoff follows."
+  },
+  "reuse_positive": {
+    "source": "outputs/v2_transport_feedforward_delivery_20261010/evidence/executed_branch/local_transport",
+    "prior_steps": 640,
+    "additional_physics": 0,
+    "purpose": "Locked carrying movement reference under feedforward; no repeat of the 3.19 mm control experiment."
+  },
+  "reuse_supported": {
+    "source": "outputs/v2_taskspace_transport_delivery_20261010/evidence/source_references/handoff_wait_public_features.json",
+    "windows_s": [
+      [
+        6.4,
+        6.72
+      ],
+      [
+        6.72,
+        7.04
+      ],
+      [
+        7.04,
+        7.36
+      ]
+    ],
+    "additional_physics": 0,
+    "limitation": "One supported/drop trajectory, still finger-contacting; no independently matched lateral Transport observation."
+  },
+  "new_data_only_if_archived_coverage_remains_inadequate": {
+    "maximum_new_branches": 2,
+    "branch_semantics": [
+      {
+        "name": "closed_empty_motion_negative",
+        "start_source": "An explicitly registered archived no-target-finger-contact full integration snapshot, preferably sustained-smooth final state; no object teleport or hidden support.",
+        "control": "Preserve its own actual clamp target. A source-specific bounded lateral diagnostic path must be statically planned and protected beforehand; do not apply successful-carry joint commands blindly to this different posture.",
+        "max_physics_steps": 640,
+        "max_blocks": 2
+      },
+      {
+        "name": "supported_target_motion_negative",
+        "start_source": "An explicitly registered archived handoff-wait supported full integration snapshot; retention/support is an offline starting hypothesis only.",
+        "control": "Preserve its actual clamp target, prohibit release, use one pre-registered source-specific bounded motion. If support changes during motion, retain the transition as evaluation outcome rather than forcing the label.",
+        "max_physics_steps": 640,
+        "max_blocks": 2
+      }
+    ],
+    "global_max_new_physics_steps": 1280,
+    "per_branch_wall_cap_seconds": 120,
+    "combined_wall_cap_seconds": 240,
+    "additional_model_calls": {
+      "VLA": 0,
+      "WM": 0,
+      "Jev": 0
+    },
+    "training": 0,
+    "sample_cadence_seconds": 0.04,
+    "expected_unique_public_observations_per_branch": 17,
+    "authorization_gate": "This is a data-collection proposal, not executable registration. Verify exact saved-state, nominal commands, geometry, owner, finite permission and protection fingerprints before seeking one explicit approval. No execution this turn.",
+    "no_retries": true,
+    "no_seed_search": true,
+    "no_controller_or_tolerance_changes": true,
+    "purpose": "A small hard-negative screen. Two local episodes cannot validate general carry recognition or calibrate reliable release permissions."
+  },
+  "association_failures": {
+    "existing_real_conflicts_in_reviewed_success_and_wait_runs": 0,
+    "first_step": "Build at most 6 archived-data software counterfactual pairs: missing front frame, missing wrist frame, stale timestamp, cross-time inconsistent camera pair, incompatible region assignment, duplicated/ambiguous regional association. Mark every pair synthetic and retain its original image provenance.",
+    "new_physics": 0,
+    "new_model_calls": 0,
+    "claim_allowed": "Only invalid/contradictory input rejection; no claim of real-scene association robustness.",
+    "real_collection_missing": "A real wrong-object/occlusion/conflict condition needs a separately registered observable scene change. Do not invent its coordinates or silently execute black-block perturbation."
+  },
+  "data_firewall": {
+    "online_allowed": [
+      "raw RGB",
+      "public encoder state",
+      "static calibration",
+      "command/receipt history",
+      "public target association"
+    ],
+    "online_forbidden": [
+      "MuJoCo object identity",
+      "private contact truth",
+      "private object pose/height",
+      "future success label"
+    ],
+    "order": "Freeze and hash public feature table first. Evaluate private contact/support/object movement in a separate evaluator afterwards. Do not write labels back into the online verifier.",
+    "split": "Group samples by original trajectory/branch, not by individual frames. Shared start state, shared prefix and repeated captures remain correlated.",
+    "output": "Report observed/unknown and contradictions separately. No tuned residual threshold, subjective carry score or privilege escalation."
+  },
+  "release_interfaces": {
+    "pre_release_support": "Object demonstrably supported before opening; not supplied by reaching an EE endpoint or descent receipt.",
+    "post_release_placement": "After an actual release receipt, target stays in registered region and gripper withdraws; separate from pre-release permission.",
+    "current_status": "Both unknown; automatic Transport handoff and Place release remain closed. This carry screen does not collect cell_0 support/release examples."
+  }
+}
